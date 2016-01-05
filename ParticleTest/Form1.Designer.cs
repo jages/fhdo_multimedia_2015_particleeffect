@@ -45,8 +45,8 @@
             this.OptScrBarPosY = new System.Windows.Forms.HScrollBar();
             this.OptLblVeloAgl = new System.Windows.Forms.Label();
             this.OptLblVelo = new System.Windows.Forms.Label();
-            this.OptScrBarVeloX = new System.Windows.Forms.HScrollBar();
-            this.OptScrBarVeloY = new System.Windows.Forms.HScrollBar();
+            this.OptScrBarSpeed = new System.Windows.Forms.HScrollBar();
+            this.OptScrBarAgl = new System.Windows.Forms.HScrollBar();
             this.OptLblVeloSpdVal = new System.Windows.Forms.Label();
             this.OptLblVeloAglVal = new System.Windows.Forms.Label();
             this.OptLblPart = new System.Windows.Forms.Label();
@@ -61,8 +61,8 @@
             this.OptLblGrvy = new System.Windows.Forms.Label();
             this.OptLblWindVal = new System.Windows.Forms.Label();
             this.OptLblGrvyVal = new System.Windows.Forms.Label();
-            this.OptScrBarGrvyX = new System.Windows.Forms.HScrollBar();
-            this.OptScrBarGrvyY = new System.Windows.Forms.HScrollBar();
+            this.OptScrBarWind = new System.Windows.Forms.HScrollBar();
+            this.OptScrBarGrvy = new System.Windows.Forms.HScrollBar();
             this.ColorTab = new System.Windows.Forms.TabPage();
             this.ColLblMin = new System.Windows.Forms.Label();
             this.ColLblMinR = new System.Windows.Forms.Label();
@@ -71,9 +71,9 @@
             this.ColLblMinGVal = new System.Windows.Forms.Label();
             this.ColLblMinRVal = new System.Windows.Forms.Label();
             this.ColLblMinBVal = new System.Windows.Forms.Label();
-            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
-            this.hScrollBar2 = new System.Windows.Forms.HScrollBar();
-            this.hScrollBar3 = new System.Windows.Forms.HScrollBar();
+            this.ColScrBarMinR = new System.Windows.Forms.HScrollBar();
+            this.ColScrBarMinG = new System.Windows.Forms.HScrollBar();
+            this.ColScrBarMinB = new System.Windows.Forms.HScrollBar();
             this.ColLblMax = new System.Windows.Forms.Label();
             this.ColLblMaxR = new System.Windows.Forms.Label();
             this.ColLblMaxG = new System.Windows.Forms.Label();
@@ -81,9 +81,9 @@
             this.ColLblMaxRVal = new System.Windows.Forms.Label();
             this.ColLblMaxGVal = new System.Windows.Forms.Label();
             this.ColLblMaxBVal = new System.Windows.Forms.Label();
-            this.hScrollBar4 = new System.Windows.Forms.HScrollBar();
-            this.hScrollBar5 = new System.Windows.Forms.HScrollBar();
-            this.hScrollBar6 = new System.Windows.Forms.HScrollBar();
+            this.ColScrBarMaxR = new System.Windows.Forms.HScrollBar();
+            this.ColScrBarMaxG = new System.Windows.Forms.HScrollBar();
+            this.ColScrBarMaxB = new System.Windows.Forms.HScrollBar();
             ((System.ComponentModel.ISupportInitialize)(this.DrawBox)).BeginInit();
             this.TabControl.SuspendLayout();
             this.SysTab.SuspendLayout();
@@ -94,7 +94,7 @@
             // FontainButton
             // 
             this.FontainButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.FontainButton.Location = new System.Drawing.Point(431, 69);
+            this.FontainButton.Location = new System.Drawing.Point(431, 109);
             this.FontainButton.Name = "FontainButton";
             this.FontainButton.Size = new System.Drawing.Size(75, 24);
             this.FontainButton.TabIndex = 1;
@@ -137,15 +137,15 @@
             this.SysTab.Location = new System.Drawing.Point(4, 22);
             this.SysTab.Name = "SysTab";
             this.SysTab.Padding = new System.Windows.Forms.Padding(3);
-            this.SysTab.Size = new System.Drawing.Size(608, 99);
+            this.SysTab.Size = new System.Drawing.Size(608, 139);
             this.SysTab.TabIndex = 0;
             this.SysTab.Text = "System";
             this.SysTab.UseVisualStyleBackColor = true;
             // 
             // BscTab
             // 
-            this.BscTab.Controls.Add(this.OptScrBarGrvyY);
-            this.BscTab.Controls.Add(this.OptScrBarGrvyX);
+            this.BscTab.Controls.Add(this.OptScrBarGrvy);
+            this.BscTab.Controls.Add(this.OptScrBarWind);
             this.BscTab.Controls.Add(this.OptLblGrvyVal);
             this.BscTab.Controls.Add(this.OptLblWindVal);
             this.BscTab.Controls.Add(this.OptLblGrvy);
@@ -160,8 +160,8 @@
             this.BscTab.Controls.Add(this.OptLblPart);
             this.BscTab.Controls.Add(this.OptLblVeloAglVal);
             this.BscTab.Controls.Add(this.OptLblVeloSpdVal);
-            this.BscTab.Controls.Add(this.OptScrBarVeloY);
-            this.BscTab.Controls.Add(this.OptScrBarVeloX);
+            this.BscTab.Controls.Add(this.OptScrBarAgl);
+            this.BscTab.Controls.Add(this.OptScrBarSpeed);
             this.BscTab.Controls.Add(this.OptLblVelo);
             this.BscTab.Controls.Add(this.OptLblVeloAgl);
             this.BscTab.Controls.Add(this.OptScrBarPosY);
@@ -208,10 +208,12 @@
             // 
             // OptScrBarPosX
             // 
+            this.OptScrBarPosX.LargeChange = 1;
             this.OptScrBarPosX.Location = new System.Drawing.Point(51, 22);
             this.OptScrBarPosX.Name = "OptScrBarPosX";
             this.OptScrBarPosX.Size = new System.Drawing.Size(80, 17);
             this.OptScrBarPosX.TabIndex = 1;
+            this.OptScrBarPosX.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarPosX_Scroll);
             // 
             // OptLblPosX
             // 
@@ -260,10 +262,12 @@
             // 
             // OptScrBarPosY
             // 
+            this.OptScrBarPosY.LargeChange = 1;
             this.OptScrBarPosY.Location = new System.Drawing.Point(51, 39);
             this.OptScrBarPosY.Name = "OptScrBarPosY";
             this.OptScrBarPosY.Size = new System.Drawing.Size(80, 17);
             this.OptScrBarPosY.TabIndex = 7;
+            this.OptScrBarPosY.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarPosY_Scroll);
             // 
             // OptLblVeloAgl
             // 
@@ -283,24 +287,28 @@
             this.OptLblVelo.TabIndex = 9;
             this.OptLblVelo.Text = "Velocity";
             // 
-            // OptScrBarVeloX
+            // OptScrBarSpeed
             // 
-            this.OptScrBarVeloX.Location = new System.Drawing.Point(235, 22);
-            this.OptScrBarVeloX.Name = "OptScrBarVeloX";
-            this.OptScrBarVeloX.Size = new System.Drawing.Size(80, 17);
-            this.OptScrBarVeloX.TabIndex = 10;
+            this.OptScrBarSpeed.LargeChange = 1;
+            this.OptScrBarSpeed.Location = new System.Drawing.Point(235, 22);
+            this.OptScrBarSpeed.Name = "OptScrBarSpeed";
+            this.OptScrBarSpeed.Size = new System.Drawing.Size(80, 17);
+            this.OptScrBarSpeed.TabIndex = 10;
+            this.OptScrBarSpeed.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarSpeed_Scroll);
             // 
-            // OptScrBarVeloY
+            // OptScrBarAgl
             // 
-            this.OptScrBarVeloY.Location = new System.Drawing.Point(235, 39);
-            this.OptScrBarVeloY.Name = "OptScrBarVeloY";
-            this.OptScrBarVeloY.Size = new System.Drawing.Size(80, 17);
-            this.OptScrBarVeloY.TabIndex = 11;
+            this.OptScrBarAgl.LargeChange = 1;
+            this.OptScrBarAgl.Location = new System.Drawing.Point(235, 39);
+            this.OptScrBarAgl.Name = "OptScrBarAgl";
+            this.OptScrBarAgl.Size = new System.Drawing.Size(80, 17);
+            this.OptScrBarAgl.TabIndex = 11;
+            this.OptScrBarAgl.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarAgl_Scroll);
             // 
             // OptLblVeloSpdVal
             // 
             this.OptLblVeloSpdVal.AutoSize = true;
-            this.OptLblVeloSpdVal.Location = new System.Drawing.Point(318, 30);
+            this.OptLblVeloSpdVal.Location = new System.Drawing.Point(318, 26);
             this.OptLblVeloSpdVal.Name = "OptLblVeloSpdVal";
             this.OptLblVeloSpdVal.Size = new System.Drawing.Size(13, 13);
             this.OptLblVeloSpdVal.TabIndex = 12;
@@ -344,17 +352,21 @@
             // 
             // OptScrBarNumPart
             // 
+            this.OptScrBarNumPart.LargeChange = 1;
             this.OptScrBarNumPart.Location = new System.Drawing.Point(235, 94);
             this.OptScrBarNumPart.Name = "OptScrBarNumPart";
             this.OptScrBarNumPart.Size = new System.Drawing.Size(80, 17);
             this.OptScrBarNumPart.TabIndex = 17;
+            this.OptScrBarNumPart.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarNumPart_Scroll);
             // 
             // OptScrBarLife
             // 
+            this.OptScrBarLife.LargeChange = 1;
             this.OptScrBarLife.Location = new System.Drawing.Point(235, 111);
             this.OptScrBarLife.Name = "OptScrBarLife";
             this.OptScrBarLife.Size = new System.Drawing.Size(80, 17);
             this.OptScrBarLife.TabIndex = 18;
+            this.OptScrBarLife.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarLife_Scroll);
             // 
             // OptLblNumPartVal
             // 
@@ -419,25 +431,29 @@
             this.OptLblGrvyVal.TabIndex = 25;
             this.OptLblGrvyVal.Text = "0";
             // 
-            // OptScrBarGrvyX
+            // OptScrBarWind
             // 
-            this.OptScrBarGrvyX.Location = new System.Drawing.Point(51, 94);
-            this.OptScrBarGrvyX.Name = "OptScrBarGrvyX";
-            this.OptScrBarGrvyX.Size = new System.Drawing.Size(80, 17);
-            this.OptScrBarGrvyX.TabIndex = 26;
+            this.OptScrBarWind.LargeChange = 1;
+            this.OptScrBarWind.Location = new System.Drawing.Point(51, 94);
+            this.OptScrBarWind.Name = "OptScrBarWind";
+            this.OptScrBarWind.Size = new System.Drawing.Size(80, 17);
+            this.OptScrBarWind.TabIndex = 26;
+            this.OptScrBarWind.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarWind_Scroll);
             // 
-            // OptScrBarGrvyY
+            // OptScrBarGrvy
             // 
-            this.OptScrBarGrvyY.Location = new System.Drawing.Point(51, 111);
-            this.OptScrBarGrvyY.Name = "OptScrBarGrvyY";
-            this.OptScrBarGrvyY.Size = new System.Drawing.Size(80, 17);
-            this.OptScrBarGrvyY.TabIndex = 27;
+            this.OptScrBarGrvy.LargeChange = 1;
+            this.OptScrBarGrvy.Location = new System.Drawing.Point(51, 111);
+            this.OptScrBarGrvy.Name = "OptScrBarGrvy";
+            this.OptScrBarGrvy.Size = new System.Drawing.Size(80, 17);
+            this.OptScrBarGrvy.TabIndex = 27;
+            this.OptScrBarGrvy.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarGrvy_Scroll);
             // 
             // ColorTab
             // 
-            this.ColorTab.Controls.Add(this.hScrollBar6);
-            this.ColorTab.Controls.Add(this.hScrollBar5);
-            this.ColorTab.Controls.Add(this.hScrollBar4);
+            this.ColorTab.Controls.Add(this.ColScrBarMaxB);
+            this.ColorTab.Controls.Add(this.ColScrBarMaxG);
+            this.ColorTab.Controls.Add(this.ColScrBarMaxR);
             this.ColorTab.Controls.Add(this.ColLblMaxBVal);
             this.ColorTab.Controls.Add(this.ColLblMaxGVal);
             this.ColorTab.Controls.Add(this.ColLblMaxRVal);
@@ -445,9 +461,9 @@
             this.ColorTab.Controls.Add(this.ColLblMaxG);
             this.ColorTab.Controls.Add(this.ColLblMaxR);
             this.ColorTab.Controls.Add(this.ColLblMax);
-            this.ColorTab.Controls.Add(this.hScrollBar1);
-            this.ColorTab.Controls.Add(this.hScrollBar2);
-            this.ColorTab.Controls.Add(this.hScrollBar3);
+            this.ColorTab.Controls.Add(this.ColScrBarMinR);
+            this.ColorTab.Controls.Add(this.ColScrBarMinG);
+            this.ColorTab.Controls.Add(this.ColScrBarMinB);
             this.ColorTab.Controls.Add(this.ColLblMinBVal);
             this.ColorTab.Controls.Add(this.ColLblMinRVal);
             this.ColorTab.Controls.Add(this.ColLblMinGVal);
@@ -458,7 +474,7 @@
             this.ColorTab.Location = new System.Drawing.Point(4, 22);
             this.ColorTab.Name = "ColorTab";
             this.ColorTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ColorTab.Size = new System.Drawing.Size(608, 99);
+            this.ColorTab.Size = new System.Drawing.Size(608, 139);
             this.ColorTab.TabIndex = 2;
             this.ColorTab.Text = "Color";
             this.ColorTab.UseVisualStyleBackColor = true;
@@ -526,26 +542,32 @@
             this.ColLblMinBVal.TabIndex = 6;
             this.ColLblMinBVal.Text = "0";
             // 
-            // hScrollBar1
+            // ColScrBarMinR
             // 
-            this.hScrollBar1.Location = new System.Drawing.Point(27, 27);
-            this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(80, 17);
-            this.hScrollBar1.TabIndex = 5;
+            this.ColScrBarMinR.LargeChange = 1;
+            this.ColScrBarMinR.Location = new System.Drawing.Point(27, 27);
+            this.ColScrBarMinR.Name = "ColScrBarMinR";
+            this.ColScrBarMinR.Size = new System.Drawing.Size(80, 17);
+            this.ColScrBarMinR.TabIndex = 5;
+            this.ColScrBarMinR.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ColScrBarMinR_Scroll);
             // 
-            // hScrollBar2
+            // ColScrBarMinG
             // 
-            this.hScrollBar2.Location = new System.Drawing.Point(27, 49);
-            this.hScrollBar2.Name = "hScrollBar2";
-            this.hScrollBar2.Size = new System.Drawing.Size(80, 17);
-            this.hScrollBar2.TabIndex = 6;
+            this.ColScrBarMinG.LargeChange = 1;
+            this.ColScrBarMinG.Location = new System.Drawing.Point(27, 49);
+            this.ColScrBarMinG.Name = "ColScrBarMinG";
+            this.ColScrBarMinG.Size = new System.Drawing.Size(80, 17);
+            this.ColScrBarMinG.TabIndex = 6;
+            this.ColScrBarMinG.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ColScrBarMinG_Scroll);
             // 
-            // hScrollBar3
+            // ColScrBarMinB
             // 
-            this.hScrollBar3.Location = new System.Drawing.Point(26, 70);
-            this.hScrollBar3.Name = "hScrollBar3";
-            this.hScrollBar3.Size = new System.Drawing.Size(80, 17);
-            this.hScrollBar3.TabIndex = 7;
+            this.ColScrBarMinB.LargeChange = 1;
+            this.ColScrBarMinB.Location = new System.Drawing.Point(26, 70);
+            this.ColScrBarMinB.Name = "ColScrBarMinB";
+            this.ColScrBarMinB.Size = new System.Drawing.Size(80, 17);
+            this.ColScrBarMinB.TabIndex = 7;
+            this.ColScrBarMinB.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ColScrBarMinB_Scroll);
             // 
             // ColLblMax
             // 
@@ -610,26 +632,32 @@
             this.ColLblMaxBVal.TabIndex = 14;
             this.ColLblMaxBVal.Text = "0";
             // 
-            // hScrollBar4
+            // ColScrBarMaxR
             // 
-            this.hScrollBar4.Location = new System.Drawing.Point(172, 27);
-            this.hScrollBar4.Name = "hScrollBar4";
-            this.hScrollBar4.Size = new System.Drawing.Size(80, 17);
-            this.hScrollBar4.TabIndex = 15;
+            this.ColScrBarMaxR.LargeChange = 1;
+            this.ColScrBarMaxR.Location = new System.Drawing.Point(172, 27);
+            this.ColScrBarMaxR.Name = "ColScrBarMaxR";
+            this.ColScrBarMaxR.Size = new System.Drawing.Size(80, 17);
+            this.ColScrBarMaxR.TabIndex = 15;
+            this.ColScrBarMaxR.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ColScrBarMaxR_Scroll);
             // 
-            // hScrollBar5
+            // ColScrBarMaxG
             // 
-            this.hScrollBar5.Location = new System.Drawing.Point(172, 49);
-            this.hScrollBar5.Name = "hScrollBar5";
-            this.hScrollBar5.Size = new System.Drawing.Size(80, 17);
-            this.hScrollBar5.TabIndex = 16;
+            this.ColScrBarMaxG.LargeChange = 1;
+            this.ColScrBarMaxG.Location = new System.Drawing.Point(172, 49);
+            this.ColScrBarMaxG.Name = "ColScrBarMaxG";
+            this.ColScrBarMaxG.Size = new System.Drawing.Size(80, 17);
+            this.ColScrBarMaxG.TabIndex = 16;
+            this.ColScrBarMaxG.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ColScrBarMaxG_Scroll);
             // 
-            // hScrollBar6
+            // ColScrBarMaxB
             // 
-            this.hScrollBar6.Location = new System.Drawing.Point(172, 70);
-            this.hScrollBar6.Name = "hScrollBar6";
-            this.hScrollBar6.Size = new System.Drawing.Size(80, 17);
-            this.hScrollBar6.TabIndex = 17;
+            this.ColScrBarMaxB.LargeChange = 1;
+            this.ColScrBarMaxB.Location = new System.Drawing.Point(172, 70);
+            this.ColScrBarMaxB.Name = "ColScrBarMaxB";
+            this.ColScrBarMaxB.Size = new System.Drawing.Size(80, 17);
+            this.ColScrBarMaxB.TabIndex = 17;
+            this.ColScrBarMaxB.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ColScrBarMaxB_Scroll);
             // 
             // Form1
             // 
@@ -666,8 +694,8 @@
         private System.Windows.Forms.TabPage BscTab;
         private System.Windows.Forms.Label OptLblVeloAglVal;
         private System.Windows.Forms.Label OptLblVeloSpdVal;
-        private System.Windows.Forms.HScrollBar OptScrBarVeloY;
-        private System.Windows.Forms.HScrollBar OptScrBarVeloX;
+        private System.Windows.Forms.HScrollBar OptScrBarAgl;
+        private System.Windows.Forms.HScrollBar OptScrBarSpeed;
         private System.Windows.Forms.Label OptLblVelo;
         private System.Windows.Forms.Label OptLblVeloAgl;
         private System.Windows.Forms.HScrollBar OptScrBarPosY;
@@ -685,17 +713,17 @@
         private System.Windows.Forms.Label OptLblLife;
         private System.Windows.Forms.Label OptLblNumPart;
         private System.Windows.Forms.Label OptLblPart;
-        private System.Windows.Forms.HScrollBar OptScrBarGrvyY;
-        private System.Windows.Forms.HScrollBar OptScrBarGrvyX;
+        private System.Windows.Forms.HScrollBar OptScrBarGrvy;
+        private System.Windows.Forms.HScrollBar OptScrBarWind;
         private System.Windows.Forms.Label OptLblGrvyVal;
         private System.Windows.Forms.Label OptLblWindVal;
         private System.Windows.Forms.Label OptLblGrvy;
         private System.Windows.Forms.Label OptLblWind;
         private System.Windows.Forms.Label OptLblPhy;
         private System.Windows.Forms.TabPage ColorTab;
-        private System.Windows.Forms.HScrollBar hScrollBar1;
-        private System.Windows.Forms.HScrollBar hScrollBar2;
-        private System.Windows.Forms.HScrollBar hScrollBar3;
+        private System.Windows.Forms.HScrollBar ColScrBarMinR;
+        private System.Windows.Forms.HScrollBar ColScrBarMinG;
+        private System.Windows.Forms.HScrollBar ColScrBarMinB;
         private System.Windows.Forms.Label ColLblMinBVal;
         private System.Windows.Forms.Label ColLblMinRVal;
         private System.Windows.Forms.Label ColLblMinGVal;
@@ -703,9 +731,9 @@
         private System.Windows.Forms.Label ColLblMinG;
         private System.Windows.Forms.Label ColLblMinR;
         private System.Windows.Forms.Label ColLblMin;
-        private System.Windows.Forms.HScrollBar hScrollBar6;
-        private System.Windows.Forms.HScrollBar hScrollBar5;
-        private System.Windows.Forms.HScrollBar hScrollBar4;
+        private System.Windows.Forms.HScrollBar ColScrBarMaxB;
+        private System.Windows.Forms.HScrollBar ColScrBarMaxG;
+        private System.Windows.Forms.HScrollBar ColScrBarMaxR;
         private System.Windows.Forms.Label ColLblMaxBVal;
         private System.Windows.Forms.Label ColLblMaxGVal;
         private System.Windows.Forms.Label ColLblMaxRVal;
