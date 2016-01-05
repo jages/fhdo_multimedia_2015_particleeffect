@@ -66,7 +66,14 @@ namespace ParticleTest
 
         private void init_Gui()
         {
+            // region Initialize TabControl
             
+            // TabPage System
+
+            string[] sItems = { "Firework", "Fontain", "..." };
+            SysCbb.DataSource = sItems;
+
+            // TabPage Option
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)

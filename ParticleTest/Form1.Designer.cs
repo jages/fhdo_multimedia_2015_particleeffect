@@ -41,14 +41,14 @@
             this.OptLblPosXVal = new System.Windows.Forms.Label();
             this.OptLblPosY = new System.Windows.Forms.Label();
             this.OptLblPosYVal = new System.Windows.Forms.Label();
-            this.OptLblVeloX = new System.Windows.Forms.Label();
+            this.OptLblVeloSpd = new System.Windows.Forms.Label();
             this.OptScrBarPosY = new System.Windows.Forms.HScrollBar();
-            this.OptLblVeloY = new System.Windows.Forms.Label();
+            this.OptLblVeloAgl = new System.Windows.Forms.Label();
             this.OptLblVelo = new System.Windows.Forms.Label();
             this.OptScrBarVeloX = new System.Windows.Forms.HScrollBar();
             this.OptScrBarVeloY = new System.Windows.Forms.HScrollBar();
-            this.OptLblVeloXVal = new System.Windows.Forms.Label();
-            this.OptLblVeloYVal = new System.Windows.Forms.Label();
+            this.OptLblVeloSpdVal = new System.Windows.Forms.Label();
+            this.OptLblVeloAglVal = new System.Windows.Forms.Label();
             this.OptLblPart = new System.Windows.Forms.Label();
             this.OptLblNumPart = new System.Windows.Forms.Label();
             this.OptLblLife = new System.Windows.Forms.Label();
@@ -56,11 +56,11 @@
             this.OptScrBarLife = new System.Windows.Forms.HScrollBar();
             this.OptLblNumPartVal = new System.Windows.Forms.Label();
             this.OptLblLifeVal = new System.Windows.Forms.Label();
+            this.OptLblPhy = new System.Windows.Forms.Label();
+            this.OptLblWind = new System.Windows.Forms.Label();
             this.OptLblGrvy = new System.Windows.Forms.Label();
-            this.OptLblGrvyX = new System.Windows.Forms.Label();
-            this.OptLblGrvyY = new System.Windows.Forms.Label();
-            this.OptLblGrvyXVal = new System.Windows.Forms.Label();
-            this.OptLblGrvyYVal = new System.Windows.Forms.Label();
+            this.OptLblWindVal = new System.Windows.Forms.Label();
+            this.OptLblGrvyVal = new System.Windows.Forms.Label();
             this.OptScrBarGrvyX = new System.Windows.Forms.HScrollBar();
             this.OptScrBarGrvyY = new System.Windows.Forms.HScrollBar();
             this.ColorTab = new System.Windows.Forms.TabPage();
@@ -126,7 +126,7 @@
             this.TabControl.Location = new System.Drawing.Point(0, 380);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(616, 125);
+            this.TabControl.Size = new System.Drawing.Size(616, 165);
             this.TabControl.TabIndex = 4;
             // 
             // SysTab
@@ -146,11 +146,11 @@
             // 
             this.BscTab.Controls.Add(this.OptScrBarGrvyY);
             this.BscTab.Controls.Add(this.OptScrBarGrvyX);
-            this.BscTab.Controls.Add(this.OptLblGrvyYVal);
-            this.BscTab.Controls.Add(this.OptLblGrvyXVal);
-            this.BscTab.Controls.Add(this.OptLblGrvyY);
-            this.BscTab.Controls.Add(this.OptLblGrvyX);
+            this.BscTab.Controls.Add(this.OptLblGrvyVal);
+            this.BscTab.Controls.Add(this.OptLblWindVal);
             this.BscTab.Controls.Add(this.OptLblGrvy);
+            this.BscTab.Controls.Add(this.OptLblWind);
+            this.BscTab.Controls.Add(this.OptLblPhy);
             this.BscTab.Controls.Add(this.OptLblLifeVal);
             this.BscTab.Controls.Add(this.OptLblNumPartVal);
             this.BscTab.Controls.Add(this.OptScrBarLife);
@@ -158,14 +158,14 @@
             this.BscTab.Controls.Add(this.OptLblLife);
             this.BscTab.Controls.Add(this.OptLblNumPart);
             this.BscTab.Controls.Add(this.OptLblPart);
-            this.BscTab.Controls.Add(this.OptLblVeloYVal);
-            this.BscTab.Controls.Add(this.OptLblVeloXVal);
+            this.BscTab.Controls.Add(this.OptLblVeloAglVal);
+            this.BscTab.Controls.Add(this.OptLblVeloSpdVal);
             this.BscTab.Controls.Add(this.OptScrBarVeloY);
             this.BscTab.Controls.Add(this.OptScrBarVeloX);
             this.BscTab.Controls.Add(this.OptLblVelo);
-            this.BscTab.Controls.Add(this.OptLblVeloY);
+            this.BscTab.Controls.Add(this.OptLblVeloAgl);
             this.BscTab.Controls.Add(this.OptScrBarPosY);
-            this.BscTab.Controls.Add(this.OptLblVeloX);
+            this.BscTab.Controls.Add(this.OptLblVeloSpd);
             this.BscTab.Controls.Add(this.OptLblPosYVal);
             this.BscTab.Controls.Add(this.OptLblPosY);
             this.BscTab.Controls.Add(this.OptLblPosXVal);
@@ -175,7 +175,7 @@
             this.BscTab.Location = new System.Drawing.Point(4, 22);
             this.BscTab.Name = "BscTab";
             this.BscTab.Padding = new System.Windows.Forms.Padding(3);
-            this.BscTab.Size = new System.Drawing.Size(608, 99);
+            this.BscTab.Size = new System.Drawing.Size(608, 139);
             this.BscTab.TabIndex = 1;
             this.BscTab.Text = "Option";
             this.BscTab.UseVisualStyleBackColor = true;
@@ -183,10 +183,6 @@
             // SysCbb
             // 
             this.SysCbb.FormattingEnabled = true;
-            this.SysCbb.Items.AddRange(new object[] {
-            "Firework",
-            "Fontain",
-            "..."});
             this.SysCbb.Location = new System.Drawing.Point(6, 19);
             this.SysCbb.Name = "SysCbb";
             this.SysCbb.Size = new System.Drawing.Size(121, 21);
@@ -212,7 +208,7 @@
             // 
             // OptScrBarPosX
             // 
-            this.OptScrBarPosX.Location = new System.Drawing.Point(26, 22);
+            this.OptScrBarPosX.Location = new System.Drawing.Point(51, 22);
             this.OptScrBarPosX.Name = "OptScrBarPosX";
             this.OptScrBarPosX.Size = new System.Drawing.Size(80, 17);
             this.OptScrBarPosX.TabIndex = 1;
@@ -229,7 +225,7 @@
             // OptLblPosXVal
             // 
             this.OptLblPosXVal.AutoSize = true;
-            this.OptLblPosXVal.Location = new System.Drawing.Point(109, 26);
+            this.OptLblPosXVal.Location = new System.Drawing.Point(134, 26);
             this.OptLblPosXVal.Name = "OptLblPosXVal";
             this.OptLblPosXVal.Size = new System.Drawing.Size(13, 13);
             this.OptLblPosXVal.TabIndex = 3;
@@ -247,41 +243,41 @@
             // OptLblPosYVal
             // 
             this.OptLblPosYVal.AutoSize = true;
-            this.OptLblPosYVal.Location = new System.Drawing.Point(109, 43);
+            this.OptLblPosYVal.Location = new System.Drawing.Point(134, 43);
             this.OptLblPosYVal.Name = "OptLblPosYVal";
             this.OptLblPosYVal.Size = new System.Drawing.Size(13, 13);
             this.OptLblPosYVal.TabIndex = 5;
             this.OptLblPosYVal.Text = "0";
             // 
-            // OptLblVeloX
+            // OptLblVeloSpd
             // 
-            this.OptLblVeloX.AutoSize = true;
-            this.OptLblVeloX.Location = new System.Drawing.Point(143, 26);
-            this.OptLblVeloX.Name = "OptLblVeloX";
-            this.OptLblVeloX.Size = new System.Drawing.Size(17, 13);
-            this.OptLblVeloX.TabIndex = 6;
-            this.OptLblVeloX.Text = "X:";
+            this.OptLblVeloSpd.AutoSize = true;
+            this.OptLblVeloSpd.Location = new System.Drawing.Point(182, 26);
+            this.OptLblVeloSpd.Name = "OptLblVeloSpd";
+            this.OptLblVeloSpd.Size = new System.Drawing.Size(41, 13);
+            this.OptLblVeloSpd.TabIndex = 6;
+            this.OptLblVeloSpd.Text = "Speed:";
             // 
             // OptScrBarPosY
             // 
-            this.OptScrBarPosY.Location = new System.Drawing.Point(26, 39);
+            this.OptScrBarPosY.Location = new System.Drawing.Point(51, 39);
             this.OptScrBarPosY.Name = "OptScrBarPosY";
             this.OptScrBarPosY.Size = new System.Drawing.Size(80, 17);
             this.OptScrBarPosY.TabIndex = 7;
             // 
-            // OptLblVeloY
+            // OptLblVeloAgl
             // 
-            this.OptLblVeloY.AutoSize = true;
-            this.OptLblVeloY.Location = new System.Drawing.Point(143, 43);
-            this.OptLblVeloY.Name = "OptLblVeloY";
-            this.OptLblVeloY.Size = new System.Drawing.Size(17, 13);
-            this.OptLblVeloY.TabIndex = 8;
-            this.OptLblVeloY.Text = "Y:";
+            this.OptLblVeloAgl.AutoSize = true;
+            this.OptLblVeloAgl.Location = new System.Drawing.Point(182, 43);
+            this.OptLblVeloAgl.Name = "OptLblVeloAgl";
+            this.OptLblVeloAgl.Size = new System.Drawing.Size(37, 13);
+            this.OptLblVeloAgl.TabIndex = 8;
+            this.OptLblVeloAgl.Text = "Angle:";
             // 
             // OptLblVelo
             // 
             this.OptLblVelo.AutoSize = true;
-            this.OptLblVelo.Location = new System.Drawing.Point(143, 3);
+            this.OptLblVelo.Location = new System.Drawing.Point(180, 3);
             this.OptLblVelo.Name = "OptLblVelo";
             this.OptLblVelo.Size = new System.Drawing.Size(44, 13);
             this.OptLblVelo.TabIndex = 9;
@@ -289,40 +285,40 @@
             // 
             // OptScrBarVeloX
             // 
-            this.OptScrBarVeloX.Location = new System.Drawing.Point(163, 22);
+            this.OptScrBarVeloX.Location = new System.Drawing.Point(235, 22);
             this.OptScrBarVeloX.Name = "OptScrBarVeloX";
             this.OptScrBarVeloX.Size = new System.Drawing.Size(80, 17);
             this.OptScrBarVeloX.TabIndex = 10;
             // 
             // OptScrBarVeloY
             // 
-            this.OptScrBarVeloY.Location = new System.Drawing.Point(163, 39);
+            this.OptScrBarVeloY.Location = new System.Drawing.Point(235, 39);
             this.OptScrBarVeloY.Name = "OptScrBarVeloY";
             this.OptScrBarVeloY.Size = new System.Drawing.Size(80, 17);
             this.OptScrBarVeloY.TabIndex = 11;
             // 
-            // OptLblVeloXVal
+            // OptLblVeloSpdVal
             // 
-            this.OptLblVeloXVal.AutoSize = true;
-            this.OptLblVeloXVal.Location = new System.Drawing.Point(246, 26);
-            this.OptLblVeloXVal.Name = "OptLblVeloXVal";
-            this.OptLblVeloXVal.Size = new System.Drawing.Size(13, 13);
-            this.OptLblVeloXVal.TabIndex = 12;
-            this.OptLblVeloXVal.Text = "0";
+            this.OptLblVeloSpdVal.AutoSize = true;
+            this.OptLblVeloSpdVal.Location = new System.Drawing.Point(318, 30);
+            this.OptLblVeloSpdVal.Name = "OptLblVeloSpdVal";
+            this.OptLblVeloSpdVal.Size = new System.Drawing.Size(13, 13);
+            this.OptLblVeloSpdVal.TabIndex = 12;
+            this.OptLblVeloSpdVal.Text = "0";
             // 
-            // OptLblVeloYVal
+            // OptLblVeloAglVal
             // 
-            this.OptLblVeloYVal.AutoSize = true;
-            this.OptLblVeloYVal.Location = new System.Drawing.Point(246, 43);
-            this.OptLblVeloYVal.Name = "OptLblVeloYVal";
-            this.OptLblVeloYVal.Size = new System.Drawing.Size(13, 13);
-            this.OptLblVeloYVal.TabIndex = 13;
-            this.OptLblVeloYVal.Text = "0";
+            this.OptLblVeloAglVal.AutoSize = true;
+            this.OptLblVeloAglVal.Location = new System.Drawing.Point(318, 43);
+            this.OptLblVeloAglVal.Name = "OptLblVeloAglVal";
+            this.OptLblVeloAglVal.Size = new System.Drawing.Size(13, 13);
+            this.OptLblVeloAglVal.TabIndex = 13;
+            this.OptLblVeloAglVal.Text = "0";
             // 
             // OptLblPart
             // 
             this.OptLblPart.AutoSize = true;
-            this.OptLblPart.Location = new System.Drawing.Point(412, 3);
+            this.OptLblPart.Location = new System.Drawing.Point(182, 72);
             this.OptLblPart.Name = "OptLblPart";
             this.OptLblPart.Size = new System.Drawing.Size(42, 13);
             this.OptLblPart.TabIndex = 14;
@@ -331,7 +327,7 @@
             // OptLblNumPart
             // 
             this.OptLblNumPart.AutoSize = true;
-            this.OptLblNumPart.Location = new System.Drawing.Point(412, 22);
+            this.OptLblNumPart.Location = new System.Drawing.Point(182, 98);
             this.OptLblNumPart.Name = "OptLblNumPart";
             this.OptLblNumPart.Size = new System.Drawing.Size(50, 13);
             this.OptLblNumPart.TabIndex = 15;
@@ -340,7 +336,7 @@
             // OptLblLife
             // 
             this.OptLblLife.AutoSize = true;
-            this.OptLblLife.Location = new System.Drawing.Point(412, 43);
+            this.OptLblLife.Location = new System.Drawing.Point(182, 115);
             this.OptLblLife.Name = "OptLblLife";
             this.OptLblLife.Size = new System.Drawing.Size(27, 13);
             this.OptLblLife.TabIndex = 16;
@@ -348,14 +344,14 @@
             // 
             // OptScrBarNumPart
             // 
-            this.OptScrBarNumPart.Location = new System.Drawing.Point(465, 22);
+            this.OptScrBarNumPart.Location = new System.Drawing.Point(235, 94);
             this.OptScrBarNumPart.Name = "OptScrBarNumPart";
             this.OptScrBarNumPart.Size = new System.Drawing.Size(80, 17);
             this.OptScrBarNumPart.TabIndex = 17;
             // 
             // OptScrBarLife
             // 
-            this.OptScrBarLife.Location = new System.Drawing.Point(465, 39);
+            this.OptScrBarLife.Location = new System.Drawing.Point(235, 111);
             this.OptScrBarLife.Name = "OptScrBarLife";
             this.OptScrBarLife.Size = new System.Drawing.Size(80, 17);
             this.OptScrBarLife.TabIndex = 18;
@@ -363,7 +359,7 @@
             // OptLblNumPartVal
             // 
             this.OptLblNumPartVal.AutoSize = true;
-            this.OptLblNumPartVal.Location = new System.Drawing.Point(548, 22);
+            this.OptLblNumPartVal.Location = new System.Drawing.Point(318, 98);
             this.OptLblNumPartVal.Name = "OptLblNumPartVal";
             this.OptLblNumPartVal.Size = new System.Drawing.Size(13, 13);
             this.OptLblNumPartVal.TabIndex = 19;
@@ -372,67 +368,67 @@
             // OptLblLifeVal
             // 
             this.OptLblLifeVal.AutoSize = true;
-            this.OptLblLifeVal.Location = new System.Drawing.Point(548, 43);
+            this.OptLblLifeVal.Location = new System.Drawing.Point(318, 115);
             this.OptLblLifeVal.Name = "OptLblLifeVal";
             this.OptLblLifeVal.Size = new System.Drawing.Size(13, 13);
             this.OptLblLifeVal.TabIndex = 20;
             this.OptLblLifeVal.Text = "0";
             // 
+            // OptLblPhy
+            // 
+            this.OptLblPhy.AutoSize = true;
+            this.OptLblPhy.Location = new System.Drawing.Point(6, 72);
+            this.OptLblPhy.Name = "OptLblPhy";
+            this.OptLblPhy.Size = new System.Drawing.Size(38, 13);
+            this.OptLblPhy.TabIndex = 21;
+            this.OptLblPhy.Text = "Physic";
+            // 
+            // OptLblWind
+            // 
+            this.OptLblWind.AutoSize = true;
+            this.OptLblWind.Location = new System.Drawing.Point(8, 98);
+            this.OptLblWind.Name = "OptLblWind";
+            this.OptLblWind.Size = new System.Drawing.Size(35, 13);
+            this.OptLblWind.TabIndex = 22;
+            this.OptLblWind.Text = "Wind:";
+            // 
             // OptLblGrvy
             // 
             this.OptLblGrvy.AutoSize = true;
-            this.OptLblGrvy.Location = new System.Drawing.Point(278, 3);
+            this.OptLblGrvy.Location = new System.Drawing.Point(8, 115);
             this.OptLblGrvy.Name = "OptLblGrvy";
-            this.OptLblGrvy.Size = new System.Drawing.Size(40, 13);
-            this.OptLblGrvy.TabIndex = 21;
-            this.OptLblGrvy.Text = "Gravity";
+            this.OptLblGrvy.Size = new System.Drawing.Size(43, 13);
+            this.OptLblGrvy.TabIndex = 23;
+            this.OptLblGrvy.Text = "Gravity:";
             // 
-            // OptLblGrvyX
+            // OptLblWindVal
             // 
-            this.OptLblGrvyX.AutoSize = true;
-            this.OptLblGrvyX.Location = new System.Drawing.Point(278, 26);
-            this.OptLblGrvyX.Name = "OptLblGrvyX";
-            this.OptLblGrvyX.Size = new System.Drawing.Size(17, 13);
-            this.OptLblGrvyX.TabIndex = 22;
-            this.OptLblGrvyX.Text = "X:";
+            this.OptLblWindVal.AutoSize = true;
+            this.OptLblWindVal.Location = new System.Drawing.Point(134, 98);
+            this.OptLblWindVal.Name = "OptLblWindVal";
+            this.OptLblWindVal.Size = new System.Drawing.Size(13, 13);
+            this.OptLblWindVal.TabIndex = 24;
+            this.OptLblWindVal.Text = "0";
             // 
-            // OptLblGrvyY
+            // OptLblGrvyVal
             // 
-            this.OptLblGrvyY.AutoSize = true;
-            this.OptLblGrvyY.Location = new System.Drawing.Point(278, 43);
-            this.OptLblGrvyY.Name = "OptLblGrvyY";
-            this.OptLblGrvyY.Size = new System.Drawing.Size(17, 13);
-            this.OptLblGrvyY.TabIndex = 23;
-            this.OptLblGrvyY.Text = "Y:";
-            // 
-            // OptLblGrvyXVal
-            // 
-            this.OptLblGrvyXVal.AutoSize = true;
-            this.OptLblGrvyXVal.Location = new System.Drawing.Point(381, 26);
-            this.OptLblGrvyXVal.Name = "OptLblGrvyXVal";
-            this.OptLblGrvyXVal.Size = new System.Drawing.Size(13, 13);
-            this.OptLblGrvyXVal.TabIndex = 24;
-            this.OptLblGrvyXVal.Text = "0";
-            // 
-            // OptLblGrvyYVal
-            // 
-            this.OptLblGrvyYVal.AutoSize = true;
-            this.OptLblGrvyYVal.Location = new System.Drawing.Point(381, 43);
-            this.OptLblGrvyYVal.Name = "OptLblGrvyYVal";
-            this.OptLblGrvyYVal.Size = new System.Drawing.Size(13, 13);
-            this.OptLblGrvyYVal.TabIndex = 25;
-            this.OptLblGrvyYVal.Text = "0";
+            this.OptLblGrvyVal.AutoSize = true;
+            this.OptLblGrvyVal.Location = new System.Drawing.Point(134, 115);
+            this.OptLblGrvyVal.Name = "OptLblGrvyVal";
+            this.OptLblGrvyVal.Size = new System.Drawing.Size(13, 13);
+            this.OptLblGrvyVal.TabIndex = 25;
+            this.OptLblGrvyVal.Text = "0";
             // 
             // OptScrBarGrvyX
             // 
-            this.OptScrBarGrvyX.Location = new System.Drawing.Point(298, 22);
+            this.OptScrBarGrvyX.Location = new System.Drawing.Point(51, 94);
             this.OptScrBarGrvyX.Name = "OptScrBarGrvyX";
             this.OptScrBarGrvyX.Size = new System.Drawing.Size(80, 17);
             this.OptScrBarGrvyX.TabIndex = 26;
             // 
             // OptScrBarGrvyY
             // 
-            this.OptScrBarGrvyY.Location = new System.Drawing.Point(298, 39);
+            this.OptScrBarGrvyY.Location = new System.Drawing.Point(51, 111);
             this.OptScrBarGrvyY.Name = "OptScrBarGrvyY";
             this.OptScrBarGrvyY.Size = new System.Drawing.Size(80, 17);
             this.OptScrBarGrvyY.TabIndex = 27;
@@ -639,7 +635,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 505);
+            this.ClientSize = new System.Drawing.Size(616, 545);
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.DrawBox);
             this.MinimumSize = new System.Drawing.Size(632, 544);
@@ -668,14 +664,14 @@
         private System.Windows.Forms.Label SysLbl;
         private System.Windows.Forms.ComboBox SysCbb;
         private System.Windows.Forms.TabPage BscTab;
-        private System.Windows.Forms.Label OptLblVeloYVal;
-        private System.Windows.Forms.Label OptLblVeloXVal;
+        private System.Windows.Forms.Label OptLblVeloAglVal;
+        private System.Windows.Forms.Label OptLblVeloSpdVal;
         private System.Windows.Forms.HScrollBar OptScrBarVeloY;
         private System.Windows.Forms.HScrollBar OptScrBarVeloX;
         private System.Windows.Forms.Label OptLblVelo;
-        private System.Windows.Forms.Label OptLblVeloY;
+        private System.Windows.Forms.Label OptLblVeloAgl;
         private System.Windows.Forms.HScrollBar OptScrBarPosY;
-        private System.Windows.Forms.Label OptLblVeloX;
+        private System.Windows.Forms.Label OptLblVeloSpd;
         private System.Windows.Forms.Label OptLblPosYVal;
         private System.Windows.Forms.Label OptLblPosY;
         private System.Windows.Forms.Label OptLblPosXVal;
@@ -691,11 +687,11 @@
         private System.Windows.Forms.Label OptLblPart;
         private System.Windows.Forms.HScrollBar OptScrBarGrvyY;
         private System.Windows.Forms.HScrollBar OptScrBarGrvyX;
-        private System.Windows.Forms.Label OptLblGrvyYVal;
-        private System.Windows.Forms.Label OptLblGrvyXVal;
-        private System.Windows.Forms.Label OptLblGrvyY;
-        private System.Windows.Forms.Label OptLblGrvyX;
+        private System.Windows.Forms.Label OptLblGrvyVal;
+        private System.Windows.Forms.Label OptLblWindVal;
         private System.Windows.Forms.Label OptLblGrvy;
+        private System.Windows.Forms.Label OptLblWind;
+        private System.Windows.Forms.Label OptLblPhy;
         private System.Windows.Forms.TabPage ColorTab;
         private System.Windows.Forms.HScrollBar hScrollBar1;
         private System.Windows.Forms.HScrollBar hScrollBar2;
