@@ -19,3 +19,12 @@ C:\Users\Peter\Dropbox\Fhdo\FS3\Multimedia\ParticleTest\ParticleTest\obj\Debug\P
 C:\Users\Timo\Dropbox\Fhdo (1)\FS3\Multimedia\ParticleTest\ParticleTest\bin\Debug\ParticleTest.exe.config
 C:\Users\Timo\Dropbox\Fhdo (1)\FS3\Multimedia\ParticleTest\ParticleTest\obj\Debug\ParticleTest.exe
 C:\Users\Timo\Dropbox\Fhdo (1)\FS3\Multimedia\ParticleTest\ParticleTest\obj\Debug\ParticleTest.pdb
+C:\Users\Timo\Multimediapartikel\ParticleTest\bin\Debug\ParticleTest.exe.config
+C:\Users\Timo\Multimediapartikel\ParticleTest\obj\Debug\ParticleTest.exe
+C:\Users\Timo\Multimediapartikel\ParticleTest\obj\Debug\ParticleTest.pdb
+C:\Users\Timo\Multimediapartikel\ParticleTest\bin\Debug\ParticleTest.exe
+C:\Users\Timo\Multimediapartikel\ParticleTest\bin\Debug\ParticleTest.pdb
+C:\Users\Timo\Multimediapartikel\ParticleTest\obj\Debug\ParticleTest.csprojResolveAssemblyReference.cache
+C:\Users\Timo\Multimediapartikel\ParticleTest\obj\Debug\ParticleTest.Form1.resources
+C:\Users\Timo\Multimediapartikel\ParticleTest\obj\Debug\ParticleTest.Properties.Resources.resources
+C:\Users\Timo\Multimediapartikel\ParticleTest\obj\Debug\ParticleTest.csproj.GenerateResource.Cache

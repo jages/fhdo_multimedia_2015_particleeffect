@@ -55,6 +55,7 @@ namespace ParticleTest
         {
             state = new ParticleState();
             InitializeComponent();
+            init_Gui();
 
             _particlethread = new Thread(ParticleProc);
             _particlethread.Start();
@@ -63,6 +64,10 @@ namespace ParticleTest
             //DrawPanel.Paint += new PaintEventHandler(DrawPanelPaint);
         }
 
+        private void init_Gui()
+        {
+            
+        }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
