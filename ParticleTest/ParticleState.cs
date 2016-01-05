@@ -22,7 +22,7 @@ namespace ParticleTest
         {
             particlecount = 0;
             particlelimit = 5119;
-            particles = new Particle[5120];
+            particles = new Particle[10240];
             //particles[0] = new Particle(0f,0f, 1, 0f, 0f, System.Drawing.Color.Red);
             //depricated, was needed to not have a NullReferenceException in creation of draw thread. Should be solved?
         }
