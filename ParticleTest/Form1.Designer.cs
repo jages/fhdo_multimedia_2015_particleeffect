@@ -32,61 +32,79 @@
             this.DrawBox = new System.Windows.Forms.PictureBox();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.SysTab = new System.Windows.Forms.TabPage();
-            this.BscTab = new System.Windows.Forms.TabPage();
-            this.SysCbb = new System.Windows.Forms.ComboBox();
+            this.SysBtnStop = new System.Windows.Forms.Button();
+            this.SysBtnStart = new System.Windows.Forms.Button();
             this.SysLbl = new System.Windows.Forms.Label();
-            this.OptLblPos = new System.Windows.Forms.Label();
-            this.OptScrBarPosX = new System.Windows.Forms.HScrollBar();
-            this.OptLblPosX = new System.Windows.Forms.Label();
-            this.OptLblPosXVal = new System.Windows.Forms.Label();
-            this.OptLblPosY = new System.Windows.Forms.Label();
-            this.OptLblPosYVal = new System.Windows.Forms.Label();
-            this.OptLblVeloSpd = new System.Windows.Forms.Label();
-            this.OptScrBarPosY = new System.Windows.Forms.HScrollBar();
-            this.OptLblVeloAgl = new System.Windows.Forms.Label();
-            this.OptLblVelo = new System.Windows.Forms.Label();
-            this.OptScrBarSpeed = new System.Windows.Forms.HScrollBar();
-            this.OptScrBarAgl = new System.Windows.Forms.HScrollBar();
-            this.OptLblVeloSpdVal = new System.Windows.Forms.Label();
+            this.SysCbb = new System.Windows.Forms.ComboBox();
+            this.PosTab = new System.Windows.Forms.TabPage();
+            this.PosLblMaxPosYVal = new System.Windows.Forms.Label();
+            this.PosLblMaxPosXVal = new System.Windows.Forms.Label();
+            this.PosLblMaxPosY = new System.Windows.Forms.Label();
+            this.PosLblMaxPosX = new System.Windows.Forms.Label();
+            this.PosLblPosMax = new System.Windows.Forms.Label();
+            this.PosScrBarMaxPosY = new System.Windows.Forms.HScrollBar();
+            this.PosScrBarMaxPosX = new System.Windows.Forms.HScrollBar();
+            this.PosScrBarMinPosY = new System.Windows.Forms.HScrollBar();
+            this.PosLblMinPosYVal = new System.Windows.Forms.Label();
+            this.PosLblMinPosY = new System.Windows.Forms.Label();
+            this.PosLblMinPosXVal = new System.Windows.Forms.Label();
+            this.PosLblMinPosX = new System.Windows.Forms.Label();
+            this.PosScrBarMinPosX = new System.Windows.Forms.HScrollBar();
+            this.PosLblPosMin = new System.Windows.Forms.Label();
+            this.BscTab = new System.Windows.Forms.TabPage();
+            this.OptScrBarInter = new System.Windows.Forms.HScrollBar();
+            this.OptScrBarCyle = new System.Windows.Forms.HScrollBar();
+            this.OptLblInterVal = new System.Windows.Forms.Label();
+            this.OptLblCycleVal = new System.Windows.Forms.Label();
+            this.OptLblCycle = new System.Windows.Forms.Label();
+            this.OptLblInter = new System.Windows.Forms.Label();
+            this.OptLblEmission = new System.Windows.Forms.Label();
             this.OptLblVeloAglVal = new System.Windows.Forms.Label();
-            this.OptLblPart = new System.Windows.Forms.Label();
-            this.OptLblNumPart = new System.Windows.Forms.Label();
-            this.OptLblLife = new System.Windows.Forms.Label();
-            this.OptScrBarNumPart = new System.Windows.Forms.HScrollBar();
-            this.OptScrBarLife = new System.Windows.Forms.HScrollBar();
-            this.OptLblNumPartVal = new System.Windows.Forms.Label();
-            this.OptLblLifeVal = new System.Windows.Forms.Label();
-            this.OptLblPhy = new System.Windows.Forms.Label();
-            this.OptLblWind = new System.Windows.Forms.Label();
-            this.OptLblGrvy = new System.Windows.Forms.Label();
-            this.OptLblWindVal = new System.Windows.Forms.Label();
-            this.OptLblGrvyVal = new System.Windows.Forms.Label();
-            this.OptScrBarWind = new System.Windows.Forms.HScrollBar();
+            this.OptLblVeloSpdVal = new System.Windows.Forms.Label();
+            this.OptScrBarAgl = new System.Windows.Forms.HScrollBar();
+            this.OptScrBarSpeed = new System.Windows.Forms.HScrollBar();
+            this.OptLblVelo = new System.Windows.Forms.Label();
+            this.OptLblVeloAgl = new System.Windows.Forms.Label();
+            this.OptLblVeloSpd = new System.Windows.Forms.Label();
             this.OptScrBarGrvy = new System.Windows.Forms.HScrollBar();
+            this.OptScrBarWind = new System.Windows.Forms.HScrollBar();
+            this.OptLblGrvyVal = new System.Windows.Forms.Label();
+            this.OptLblWindVal = new System.Windows.Forms.Label();
+            this.OptLblGrvy = new System.Windows.Forms.Label();
+            this.OptLblWind = new System.Windows.Forms.Label();
+            this.OptLblPhy = new System.Windows.Forms.Label();
+            this.OptLblLifeVal = new System.Windows.Forms.Label();
+            this.OptLblNumPartVal = new System.Windows.Forms.Label();
+            this.OptScrBarLife = new System.Windows.Forms.HScrollBar();
+            this.OptScrBarNumPart = new System.Windows.Forms.HScrollBar();
+            this.OptLblLife = new System.Windows.Forms.Label();
+            this.OptLblNumPart = new System.Windows.Forms.Label();
+            this.OptLblPart = new System.Windows.Forms.Label();
             this.ColorTab = new System.Windows.Forms.TabPage();
-            this.ColLblMin = new System.Windows.Forms.Label();
-            this.ColLblMinR = new System.Windows.Forms.Label();
-            this.ColLblMinG = new System.Windows.Forms.Label();
-            this.ColLblMinB = new System.Windows.Forms.Label();
-            this.ColLblMinGVal = new System.Windows.Forms.Label();
-            this.ColLblMinRVal = new System.Windows.Forms.Label();
-            this.ColLblMinBVal = new System.Windows.Forms.Label();
+            this.ColScrBarMaxB = new System.Windows.Forms.HScrollBar();
+            this.ColScrBarMaxG = new System.Windows.Forms.HScrollBar();
+            this.ColScrBarMaxR = new System.Windows.Forms.HScrollBar();
+            this.ColLblMaxBVal = new System.Windows.Forms.Label();
+            this.ColLblMaxGVal = new System.Windows.Forms.Label();
+            this.ColLblMaxRVal = new System.Windows.Forms.Label();
+            this.ColLblMaxB = new System.Windows.Forms.Label();
+            this.ColLblMaxG = new System.Windows.Forms.Label();
+            this.ColLblMaxR = new System.Windows.Forms.Label();
+            this.ColLblMax = new System.Windows.Forms.Label();
             this.ColScrBarMinR = new System.Windows.Forms.HScrollBar();
             this.ColScrBarMinG = new System.Windows.Forms.HScrollBar();
             this.ColScrBarMinB = new System.Windows.Forms.HScrollBar();
-            this.ColLblMax = new System.Windows.Forms.Label();
-            this.ColLblMaxR = new System.Windows.Forms.Label();
-            this.ColLblMaxG = new System.Windows.Forms.Label();
-            this.ColLblMaxB = new System.Windows.Forms.Label();
-            this.ColLblMaxRVal = new System.Windows.Forms.Label();
-            this.ColLblMaxGVal = new System.Windows.Forms.Label();
-            this.ColLblMaxBVal = new System.Windows.Forms.Label();
-            this.ColScrBarMaxR = new System.Windows.Forms.HScrollBar();
-            this.ColScrBarMaxG = new System.Windows.Forms.HScrollBar();
-            this.ColScrBarMaxB = new System.Windows.Forms.HScrollBar();
+            this.ColLblMinBVal = new System.Windows.Forms.Label();
+            this.ColLblMinRVal = new System.Windows.Forms.Label();
+            this.ColLblMinGVal = new System.Windows.Forms.Label();
+            this.ColLblMinB = new System.Windows.Forms.Label();
+            this.ColLblMinG = new System.Windows.Forms.Label();
+            this.ColLblMinR = new System.Windows.Forms.Label();
+            this.ColLblMin = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DrawBox)).BeginInit();
             this.TabControl.SuspendLayout();
             this.SysTab.SuspendLayout();
+            this.PosTab.SuspendLayout();
             this.BscTab.SuspendLayout();
             this.ColorTab.SuspendLayout();
             this.SuspendLayout();
@@ -94,7 +112,7 @@
             // FontainButton
             // 
             this.FontainButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.FontainButton.Location = new System.Drawing.Point(431, 109);
+            this.FontainButton.Location = new System.Drawing.Point(525, 6);
             this.FontainButton.Name = "FontainButton";
             this.FontainButton.Size = new System.Drawing.Size(75, 24);
             this.FontainButton.TabIndex = 1;
@@ -108,11 +126,12 @@
             this.DrawBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.DrawBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.DrawBox.Location = new System.Drawing.Point(0, 0);
-            this.DrawBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DrawBox.Margin = new System.Windows.Forms.Padding(2);
             this.DrawBox.Name = "DrawBox";
             this.DrawBox.Size = new System.Drawing.Size(616, 375);
             this.DrawBox.TabIndex = 3;
             this.DrawBox.TabStop = false;
+            this.DrawBox.SizeChanged += new System.EventHandler(this.DrawBox_SizeChanged);
             this.DrawBox.Click += new System.EventHandler(this.DrawBox_Click);
             this.DrawBox.Paint += new System.Windows.Forms.PaintEventHandler(this.DrawBox_Paint);
             this.DrawBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DrawBox_MouseClick);
@@ -120,6 +139,7 @@
             // TabControl
             // 
             this.TabControl.Controls.Add(this.SysTab);
+            this.TabControl.Controls.Add(this.PosTab);
             this.TabControl.Controls.Add(this.BscTab);
             this.TabControl.Controls.Add(this.ColorTab);
             this.TabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -131,6 +151,8 @@
             // 
             // SysTab
             // 
+            this.SysTab.Controls.Add(this.SysBtnStop);
+            this.SysTab.Controls.Add(this.SysBtnStart);
             this.SysTab.Controls.Add(this.SysLbl);
             this.SysTab.Controls.Add(this.SysCbb);
             this.SysTab.Controls.Add(this.FontainButton);
@@ -142,8 +164,210 @@
             this.SysTab.Text = "System";
             this.SysTab.UseVisualStyleBackColor = true;
             // 
+            // SysBtnStop
+            // 
+            this.SysBtnStop.Location = new System.Drawing.Point(527, 113);
+            this.SysBtnStop.Name = "SysBtnStop";
+            this.SysBtnStop.Size = new System.Drawing.Size(75, 23);
+            this.SysBtnStop.TabIndex = 5;
+            this.SysBtnStop.Text = "Stop";
+            this.SysBtnStop.UseVisualStyleBackColor = true;
+            this.SysBtnStop.Click += new System.EventHandler(this.SysBtnStop_Click);
+            // 
+            // SysBtnStart
+            // 
+            this.SysBtnStart.Location = new System.Drawing.Point(446, 113);
+            this.SysBtnStart.Name = "SysBtnStart";
+            this.SysBtnStart.Size = new System.Drawing.Size(75, 23);
+            this.SysBtnStart.TabIndex = 4;
+            this.SysBtnStart.Text = "Start";
+            this.SysBtnStart.UseVisualStyleBackColor = true;
+            this.SysBtnStart.Click += new System.EventHandler(this.SysBtnStart_Click);
+            // 
+            // SysLbl
+            // 
+            this.SysLbl.AutoSize = true;
+            this.SysLbl.Location = new System.Drawing.Point(6, 3);
+            this.SysLbl.Name = "SysLbl";
+            this.SysLbl.Size = new System.Drawing.Size(79, 13);
+            this.SysLbl.TabIndex = 3;
+            this.SysLbl.Text = "Particle System";
+            // 
+            // SysCbb
+            // 
+            this.SysCbb.FormattingEnabled = true;
+            this.SysCbb.Location = new System.Drawing.Point(6, 19);
+            this.SysCbb.Name = "SysCbb";
+            this.SysCbb.Size = new System.Drawing.Size(121, 21);
+            this.SysCbb.TabIndex = 2;
+            this.SysCbb.SelectedIndexChanged += new System.EventHandler(this.SysCbb_SelectedIndexChanged);
+            // 
+            // PosTab
+            // 
+            this.PosTab.Controls.Add(this.PosLblMaxPosYVal);
+            this.PosTab.Controls.Add(this.PosLblMaxPosXVal);
+            this.PosTab.Controls.Add(this.PosLblMaxPosY);
+            this.PosTab.Controls.Add(this.PosLblMaxPosX);
+            this.PosTab.Controls.Add(this.PosLblPosMax);
+            this.PosTab.Controls.Add(this.PosScrBarMaxPosY);
+            this.PosTab.Controls.Add(this.PosScrBarMaxPosX);
+            this.PosTab.Controls.Add(this.PosScrBarMinPosY);
+            this.PosTab.Controls.Add(this.PosLblMinPosYVal);
+            this.PosTab.Controls.Add(this.PosLblMinPosY);
+            this.PosTab.Controls.Add(this.PosLblMinPosXVal);
+            this.PosTab.Controls.Add(this.PosLblMinPosX);
+            this.PosTab.Controls.Add(this.PosScrBarMinPosX);
+            this.PosTab.Controls.Add(this.PosLblPosMin);
+            this.PosTab.Location = new System.Drawing.Point(4, 22);
+            this.PosTab.Name = "PosTab";
+            this.PosTab.Padding = new System.Windows.Forms.Padding(3);
+            this.PosTab.Size = new System.Drawing.Size(608, 139);
+            this.PosTab.TabIndex = 3;
+            this.PosTab.Text = "Position";
+            this.PosTab.UseVisualStyleBackColor = true;
+            // 
+            // PosLblMaxPosYVal
+            // 
+            this.PosLblMaxPosYVal.AutoSize = true;
+            this.PosLblMaxPosYVal.Location = new System.Drawing.Point(256, 52);
+            this.PosLblMaxPosYVal.Name = "PosLblMaxPosYVal";
+            this.PosLblMaxPosYVal.Size = new System.Drawing.Size(13, 13);
+            this.PosLblMaxPosYVal.TabIndex = 20;
+            this.PosLblMaxPosYVal.Text = "0";
+            // 
+            // PosLblMaxPosXVal
+            // 
+            this.PosLblMaxPosXVal.AutoSize = true;
+            this.PosLblMaxPosXVal.Location = new System.Drawing.Point(256, 31);
+            this.PosLblMaxPosXVal.Name = "PosLblMaxPosXVal";
+            this.PosLblMaxPosXVal.Size = new System.Drawing.Size(13, 13);
+            this.PosLblMaxPosXVal.TabIndex = 19;
+            this.PosLblMaxPosXVal.Text = "0";
+            // 
+            // PosLblMaxPosY
+            // 
+            this.PosLblMaxPosY.AutoSize = true;
+            this.PosLblMaxPosY.Location = new System.Drawing.Point(153, 48);
+            this.PosLblMaxPosY.Name = "PosLblMaxPosY";
+            this.PosLblMaxPosY.Size = new System.Drawing.Size(17, 13);
+            this.PosLblMaxPosY.TabIndex = 18;
+            this.PosLblMaxPosY.Text = "Y:";
+            // 
+            // PosLblMaxPosX
+            // 
+            this.PosLblMaxPosX.AutoSize = true;
+            this.PosLblMaxPosX.Location = new System.Drawing.Point(153, 31);
+            this.PosLblMaxPosX.Name = "PosLblMaxPosX";
+            this.PosLblMaxPosX.Size = new System.Drawing.Size(17, 13);
+            this.PosLblMaxPosX.TabIndex = 17;
+            this.PosLblMaxPosX.Text = "X:";
+            // 
+            // PosLblPosMax
+            // 
+            this.PosLblPosMax.AutoSize = true;
+            this.PosLblPosMax.Location = new System.Drawing.Point(153, 0);
+            this.PosLblPosMax.Name = "PosLblPosMax";
+            this.PosLblPosMax.Size = new System.Drawing.Size(91, 13);
+            this.PosLblPosMax.TabIndex = 16;
+            this.PosLblPosMax.Text = "Position Maximum";
+            // 
+            // PosScrBarMaxPosY
+            // 
+            this.PosScrBarMaxPosY.LargeChange = 1;
+            this.PosScrBarMaxPosY.Location = new System.Drawing.Point(173, 48);
+            this.PosScrBarMaxPosY.Name = "PosScrBarMaxPosY";
+            this.PosScrBarMaxPosY.Size = new System.Drawing.Size(80, 17);
+            this.PosScrBarMaxPosY.TabIndex = 15;
+            this.PosScrBarMaxPosY.Scroll += new System.Windows.Forms.ScrollEventHandler(this.PosScrBarMaxPosY_Scroll);
+            // 
+            // PosScrBarMaxPosX
+            // 
+            this.PosScrBarMaxPosX.LargeChange = 1;
+            this.PosScrBarMaxPosX.Location = new System.Drawing.Point(173, 27);
+            this.PosScrBarMaxPosX.Name = "PosScrBarMaxPosX";
+            this.PosScrBarMaxPosX.Size = new System.Drawing.Size(80, 17);
+            this.PosScrBarMaxPosX.TabIndex = 14;
+            this.PosScrBarMaxPosX.Scroll += new System.Windows.Forms.ScrollEventHandler(this.PosScrBarMaxPosX_Scroll);
+            // 
+            // PosScrBarMinPosY
+            // 
+            this.PosScrBarMinPosY.LargeChange = 1;
+            this.PosScrBarMinPosY.Location = new System.Drawing.Point(25, 48);
+            this.PosScrBarMinPosY.Name = "PosScrBarMinPosY";
+            this.PosScrBarMinPosY.Size = new System.Drawing.Size(80, 17);
+            this.PosScrBarMinPosY.TabIndex = 13;
+            this.PosScrBarMinPosY.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarMinPosY_Scroll);
+            // 
+            // PosLblMinPosYVal
+            // 
+            this.PosLblMinPosYVal.AutoSize = true;
+            this.PosLblMinPosYVal.Location = new System.Drawing.Point(108, 52);
+            this.PosLblMinPosYVal.Name = "PosLblMinPosYVal";
+            this.PosLblMinPosYVal.Size = new System.Drawing.Size(13, 13);
+            this.PosLblMinPosYVal.TabIndex = 12;
+            this.PosLblMinPosYVal.Text = "0";
+            // 
+            // PosLblMinPosY
+            // 
+            this.PosLblMinPosY.AutoSize = true;
+            this.PosLblMinPosY.Location = new System.Drawing.Point(5, 48);
+            this.PosLblMinPosY.Name = "PosLblMinPosY";
+            this.PosLblMinPosY.Size = new System.Drawing.Size(17, 13);
+            this.PosLblMinPosY.TabIndex = 11;
+            this.PosLblMinPosY.Text = "Y:";
+            // 
+            // PosLblMinPosXVal
+            // 
+            this.PosLblMinPosXVal.AutoSize = true;
+            this.PosLblMinPosXVal.Location = new System.Drawing.Point(108, 31);
+            this.PosLblMinPosXVal.Name = "PosLblMinPosXVal";
+            this.PosLblMinPosXVal.Size = new System.Drawing.Size(13, 13);
+            this.PosLblMinPosXVal.TabIndex = 10;
+            this.PosLblMinPosXVal.Text = "0";
+            // 
+            // PosLblMinPosX
+            // 
+            this.PosLblMinPosX.AutoSize = true;
+            this.PosLblMinPosX.Location = new System.Drawing.Point(5, 31);
+            this.PosLblMinPosX.Name = "PosLblMinPosX";
+            this.PosLblMinPosX.Size = new System.Drawing.Size(17, 13);
+            this.PosLblMinPosX.TabIndex = 9;
+            this.PosLblMinPosX.Text = "X:";
+            // 
+            // PosScrBarMinPosX
+            // 
+            this.PosScrBarMinPosX.LargeChange = 1;
+            this.PosScrBarMinPosX.Location = new System.Drawing.Point(25, 27);
+            this.PosScrBarMinPosX.Name = "PosScrBarMinPosX";
+            this.PosScrBarMinPosX.Size = new System.Drawing.Size(80, 17);
+            this.PosScrBarMinPosX.TabIndex = 8;
+            this.PosScrBarMinPosX.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarMinPosX_Scroll);
+            // 
+            // PosLblPosMin
+            // 
+            this.PosLblPosMin.AutoSize = true;
+            this.PosLblPosMin.Location = new System.Drawing.Point(6, 3);
+            this.PosLblPosMin.Name = "PosLblPosMin";
+            this.PosLblPosMin.Size = new System.Drawing.Size(88, 13);
+            this.PosLblPosMin.TabIndex = 1;
+            this.PosLblPosMin.Text = "Position Minimum";
+            // 
             // BscTab
             // 
+            this.BscTab.Controls.Add(this.OptScrBarInter);
+            this.BscTab.Controls.Add(this.OptScrBarCyle);
+            this.BscTab.Controls.Add(this.OptLblInterVal);
+            this.BscTab.Controls.Add(this.OptLblCycleVal);
+            this.BscTab.Controls.Add(this.OptLblCycle);
+            this.BscTab.Controls.Add(this.OptLblInter);
+            this.BscTab.Controls.Add(this.OptLblEmission);
+            this.BscTab.Controls.Add(this.OptLblVeloAglVal);
+            this.BscTab.Controls.Add(this.OptLblVeloSpdVal);
+            this.BscTab.Controls.Add(this.OptScrBarAgl);
+            this.BscTab.Controls.Add(this.OptScrBarSpeed);
+            this.BscTab.Controls.Add(this.OptLblVelo);
+            this.BscTab.Controls.Add(this.OptLblVeloAgl);
+            this.BscTab.Controls.Add(this.OptLblVeloSpd);
             this.BscTab.Controls.Add(this.OptScrBarGrvy);
             this.BscTab.Controls.Add(this.OptScrBarWind);
             this.BscTab.Controls.Add(this.OptLblGrvyVal);
@@ -158,20 +382,6 @@
             this.BscTab.Controls.Add(this.OptLblLife);
             this.BscTab.Controls.Add(this.OptLblNumPart);
             this.BscTab.Controls.Add(this.OptLblPart);
-            this.BscTab.Controls.Add(this.OptLblVeloAglVal);
-            this.BscTab.Controls.Add(this.OptLblVeloSpdVal);
-            this.BscTab.Controls.Add(this.OptScrBarAgl);
-            this.BscTab.Controls.Add(this.OptScrBarSpeed);
-            this.BscTab.Controls.Add(this.OptLblVelo);
-            this.BscTab.Controls.Add(this.OptLblVeloAgl);
-            this.BscTab.Controls.Add(this.OptScrBarPosY);
-            this.BscTab.Controls.Add(this.OptLblVeloSpd);
-            this.BscTab.Controls.Add(this.OptLblPosYVal);
-            this.BscTab.Controls.Add(this.OptLblPosY);
-            this.BscTab.Controls.Add(this.OptLblPosXVal);
-            this.BscTab.Controls.Add(this.OptLblPosX);
-            this.BscTab.Controls.Add(this.OptScrBarPosX);
-            this.BscTab.Controls.Add(this.OptLblPos);
             this.BscTab.Location = new System.Drawing.Point(4, 22);
             this.BscTab.Name = "BscTab";
             this.BscTab.Padding = new System.Windows.Forms.Padding(3);
@@ -180,274 +390,257 @@
             this.BscTab.Text = "Option";
             this.BscTab.UseVisualStyleBackColor = true;
             // 
-            // SysCbb
+            // OptScrBarInter
             // 
-            this.SysCbb.FormattingEnabled = true;
-            this.SysCbb.Location = new System.Drawing.Point(6, 19);
-            this.SysCbb.Name = "SysCbb";
-            this.SysCbb.Size = new System.Drawing.Size(121, 21);
-            this.SysCbb.TabIndex = 2;
+            this.OptScrBarInter.LargeChange = 1;
+            this.OptScrBarInter.Location = new System.Drawing.Point(227, 110);
+            this.OptScrBarInter.Name = "OptScrBarInter";
+            this.OptScrBarInter.Size = new System.Drawing.Size(80, 17);
+            this.OptScrBarInter.TabIndex = 41;
+            this.OptScrBarInter.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarEmission_Scroll);
             // 
-            // SysLbl
+            // OptScrBarCyle
             // 
-            this.SysLbl.AutoSize = true;
-            this.SysLbl.Location = new System.Drawing.Point(6, 3);
-            this.SysLbl.Name = "SysLbl";
-            this.SysLbl.Size = new System.Drawing.Size(79, 13);
-            this.SysLbl.TabIndex = 3;
-            this.SysLbl.Text = "Particle System";
+            this.OptScrBarCyle.LargeChange = 1;
+            this.OptScrBarCyle.Location = new System.Drawing.Point(227, 93);
+            this.OptScrBarCyle.Name = "OptScrBarCyle";
+            this.OptScrBarCyle.Size = new System.Drawing.Size(80, 17);
+            this.OptScrBarCyle.TabIndex = 40;
+            this.OptScrBarCyle.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarCyle_Scroll);
             // 
-            // OptLblPos
+            // OptLblInterVal
             // 
-            this.OptLblPos.AutoSize = true;
-            this.OptLblPos.Location = new System.Drawing.Point(6, 3);
-            this.OptLblPos.Name = "OptLblPos";
-            this.OptLblPos.Size = new System.Drawing.Size(44, 13);
-            this.OptLblPos.TabIndex = 0;
-            this.OptLblPos.Text = "Position";
+            this.OptLblInterVal.AutoSize = true;
+            this.OptLblInterVal.Location = new System.Drawing.Point(310, 114);
+            this.OptLblInterVal.Name = "OptLblInterVal";
+            this.OptLblInterVal.Size = new System.Drawing.Size(13, 13);
+            this.OptLblInterVal.TabIndex = 39;
+            this.OptLblInterVal.Text = "0";
             // 
-            // OptScrBarPosX
+            // OptLblCycleVal
             // 
-            this.OptScrBarPosX.LargeChange = 1;
-            this.OptScrBarPosX.Location = new System.Drawing.Point(51, 22);
-            this.OptScrBarPosX.Name = "OptScrBarPosX";
-            this.OptScrBarPosX.Size = new System.Drawing.Size(80, 17);
-            this.OptScrBarPosX.TabIndex = 1;
-            this.OptScrBarPosX.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarPosX_Scroll);
+            this.OptLblCycleVal.AutoSize = true;
+            this.OptLblCycleVal.Location = new System.Drawing.Point(310, 97);
+            this.OptLblCycleVal.Name = "OptLblCycleVal";
+            this.OptLblCycleVal.Size = new System.Drawing.Size(13, 13);
+            this.OptLblCycleVal.TabIndex = 38;
+            this.OptLblCycleVal.Text = "0";
             // 
-            // OptLblPosX
+            // OptLblCycle
             // 
-            this.OptLblPosX.AutoSize = true;
-            this.OptLblPosX.Location = new System.Drawing.Point(6, 26);
-            this.OptLblPosX.Name = "OptLblPosX";
-            this.OptLblPosX.Size = new System.Drawing.Size(17, 13);
-            this.OptLblPosX.TabIndex = 2;
-            this.OptLblPosX.Text = "X:";
+            this.OptLblCycle.AutoSize = true;
+            this.OptLblCycle.Location = new System.Drawing.Point(182, 97);
+            this.OptLblCycle.Name = "OptLblCycle";
+            this.OptLblCycle.Size = new System.Drawing.Size(36, 13);
+            this.OptLblCycle.TabIndex = 37;
+            this.OptLblCycle.Text = "Cycle:";
             // 
-            // OptLblPosXVal
+            // OptLblInter
             // 
-            this.OptLblPosXVal.AutoSize = true;
-            this.OptLblPosXVal.Location = new System.Drawing.Point(134, 26);
-            this.OptLblPosXVal.Name = "OptLblPosXVal";
-            this.OptLblPosXVal.Size = new System.Drawing.Size(13, 13);
-            this.OptLblPosXVal.TabIndex = 3;
-            this.OptLblPosXVal.Text = "0";
+            this.OptLblInter.AutoSize = true;
+            this.OptLblInter.Location = new System.Drawing.Point(182, 114);
+            this.OptLblInter.Name = "OptLblInter";
+            this.OptLblInter.Size = new System.Drawing.Size(45, 13);
+            this.OptLblInter.TabIndex = 36;
+            this.OptLblInter.Text = "Interval:";
             // 
-            // OptLblPosY
+            // OptLblEmission
             // 
-            this.OptLblPosY.AutoSize = true;
-            this.OptLblPosY.Location = new System.Drawing.Point(6, 43);
-            this.OptLblPosY.Name = "OptLblPosY";
-            this.OptLblPosY.Size = new System.Drawing.Size(17, 13);
-            this.OptLblPosY.TabIndex = 4;
-            this.OptLblPosY.Text = "Y:";
-            // 
-            // OptLblPosYVal
-            // 
-            this.OptLblPosYVal.AutoSize = true;
-            this.OptLblPosYVal.Location = new System.Drawing.Point(134, 43);
-            this.OptLblPosYVal.Name = "OptLblPosYVal";
-            this.OptLblPosYVal.Size = new System.Drawing.Size(13, 13);
-            this.OptLblPosYVal.TabIndex = 5;
-            this.OptLblPosYVal.Text = "0";
-            // 
-            // OptLblVeloSpd
-            // 
-            this.OptLblVeloSpd.AutoSize = true;
-            this.OptLblVeloSpd.Location = new System.Drawing.Point(182, 26);
-            this.OptLblVeloSpd.Name = "OptLblVeloSpd";
-            this.OptLblVeloSpd.Size = new System.Drawing.Size(41, 13);
-            this.OptLblVeloSpd.TabIndex = 6;
-            this.OptLblVeloSpd.Text = "Speed:";
-            // 
-            // OptScrBarPosY
-            // 
-            this.OptScrBarPosY.LargeChange = 1;
-            this.OptScrBarPosY.Location = new System.Drawing.Point(51, 39);
-            this.OptScrBarPosY.Name = "OptScrBarPosY";
-            this.OptScrBarPosY.Size = new System.Drawing.Size(80, 17);
-            this.OptScrBarPosY.TabIndex = 7;
-            this.OptScrBarPosY.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarPosY_Scroll);
-            // 
-            // OptLblVeloAgl
-            // 
-            this.OptLblVeloAgl.AutoSize = true;
-            this.OptLblVeloAgl.Location = new System.Drawing.Point(182, 43);
-            this.OptLblVeloAgl.Name = "OptLblVeloAgl";
-            this.OptLblVeloAgl.Size = new System.Drawing.Size(37, 13);
-            this.OptLblVeloAgl.TabIndex = 8;
-            this.OptLblVeloAgl.Text = "Angle:";
-            // 
-            // OptLblVelo
-            // 
-            this.OptLblVelo.AutoSize = true;
-            this.OptLblVelo.Location = new System.Drawing.Point(180, 3);
-            this.OptLblVelo.Name = "OptLblVelo";
-            this.OptLblVelo.Size = new System.Drawing.Size(44, 13);
-            this.OptLblVelo.TabIndex = 9;
-            this.OptLblVelo.Text = "Velocity";
-            // 
-            // OptScrBarSpeed
-            // 
-            this.OptScrBarSpeed.LargeChange = 1;
-            this.OptScrBarSpeed.Location = new System.Drawing.Point(235, 22);
-            this.OptScrBarSpeed.Name = "OptScrBarSpeed";
-            this.OptScrBarSpeed.Size = new System.Drawing.Size(80, 17);
-            this.OptScrBarSpeed.TabIndex = 10;
-            this.OptScrBarSpeed.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarSpeed_Scroll);
-            // 
-            // OptScrBarAgl
-            // 
-            this.OptScrBarAgl.LargeChange = 1;
-            this.OptScrBarAgl.Location = new System.Drawing.Point(235, 39);
-            this.OptScrBarAgl.Name = "OptScrBarAgl";
-            this.OptScrBarAgl.Size = new System.Drawing.Size(80, 17);
-            this.OptScrBarAgl.TabIndex = 11;
-            this.OptScrBarAgl.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarAgl_Scroll);
-            // 
-            // OptLblVeloSpdVal
-            // 
-            this.OptLblVeloSpdVal.AutoSize = true;
-            this.OptLblVeloSpdVal.Location = new System.Drawing.Point(318, 26);
-            this.OptLblVeloSpdVal.Name = "OptLblVeloSpdVal";
-            this.OptLblVeloSpdVal.Size = new System.Drawing.Size(13, 13);
-            this.OptLblVeloSpdVal.TabIndex = 12;
-            this.OptLblVeloSpdVal.Text = "0";
+            this.OptLblEmission.AutoSize = true;
+            this.OptLblEmission.Location = new System.Drawing.Point(182, 71);
+            this.OptLblEmission.Name = "OptLblEmission";
+            this.OptLblEmission.Size = new System.Drawing.Size(48, 13);
+            this.OptLblEmission.TabIndex = 35;
+            this.OptLblEmission.Text = "Emission";
             // 
             // OptLblVeloAglVal
             // 
             this.OptLblVeloAglVal.AutoSize = true;
-            this.OptLblVeloAglVal.Location = new System.Drawing.Point(318, 43);
+            this.OptLblVeloAglVal.Location = new System.Drawing.Point(146, 43);
             this.OptLblVeloAglVal.Name = "OptLblVeloAglVal";
             this.OptLblVeloAglVal.Size = new System.Drawing.Size(13, 13);
-            this.OptLblVeloAglVal.TabIndex = 13;
+            this.OptLblVeloAglVal.TabIndex = 34;
             this.OptLblVeloAglVal.Text = "0";
             // 
-            // OptLblPart
+            // OptLblVeloSpdVal
             // 
-            this.OptLblPart.AutoSize = true;
-            this.OptLblPart.Location = new System.Drawing.Point(182, 72);
-            this.OptLblPart.Name = "OptLblPart";
-            this.OptLblPart.Size = new System.Drawing.Size(42, 13);
-            this.OptLblPart.TabIndex = 14;
-            this.OptLblPart.Text = "Particle";
+            this.OptLblVeloSpdVal.AutoSize = true;
+            this.OptLblVeloSpdVal.Location = new System.Drawing.Point(146, 26);
+            this.OptLblVeloSpdVal.Name = "OptLblVeloSpdVal";
+            this.OptLblVeloSpdVal.Size = new System.Drawing.Size(13, 13);
+            this.OptLblVeloSpdVal.TabIndex = 33;
+            this.OptLblVeloSpdVal.Text = "0";
             // 
-            // OptLblNumPart
+            // OptScrBarAgl
             // 
-            this.OptLblNumPart.AutoSize = true;
-            this.OptLblNumPart.Location = new System.Drawing.Point(182, 98);
-            this.OptLblNumPart.Name = "OptLblNumPart";
-            this.OptLblNumPart.Size = new System.Drawing.Size(50, 13);
-            this.OptLblNumPart.TabIndex = 15;
-            this.OptLblNumPart.Text = "Particles:";
+            this.OptScrBarAgl.LargeChange = 1;
+            this.OptScrBarAgl.Location = new System.Drawing.Point(63, 39);
+            this.OptScrBarAgl.Name = "OptScrBarAgl";
+            this.OptScrBarAgl.Size = new System.Drawing.Size(80, 17);
+            this.OptScrBarAgl.TabIndex = 32;
+            this.OptScrBarAgl.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarAgl_Scroll);
             // 
-            // OptLblLife
+            // OptScrBarSpeed
             // 
-            this.OptLblLife.AutoSize = true;
-            this.OptLblLife.Location = new System.Drawing.Point(182, 115);
-            this.OptLblLife.Name = "OptLblLife";
-            this.OptLblLife.Size = new System.Drawing.Size(27, 13);
-            this.OptLblLife.TabIndex = 16;
-            this.OptLblLife.Text = "Life:";
+            this.OptScrBarSpeed.LargeChange = 1;
+            this.OptScrBarSpeed.Location = new System.Drawing.Point(63, 22);
+            this.OptScrBarSpeed.Name = "OptScrBarSpeed";
+            this.OptScrBarSpeed.Size = new System.Drawing.Size(80, 17);
+            this.OptScrBarSpeed.TabIndex = 31;
+            this.OptScrBarSpeed.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarSpeed_Scroll);
             // 
-            // OptScrBarNumPart
+            // OptLblVelo
             // 
-            this.OptScrBarNumPart.LargeChange = 1;
-            this.OptScrBarNumPart.Location = new System.Drawing.Point(235, 94);
-            this.OptScrBarNumPart.Name = "OptScrBarNumPart";
-            this.OptScrBarNumPart.Size = new System.Drawing.Size(80, 17);
-            this.OptScrBarNumPart.TabIndex = 17;
-            this.OptScrBarNumPart.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarNumPart_Scroll);
+            this.OptLblVelo.AutoSize = true;
+            this.OptLblVelo.Location = new System.Drawing.Point(8, 3);
+            this.OptLblVelo.Name = "OptLblVelo";
+            this.OptLblVelo.Size = new System.Drawing.Size(44, 13);
+            this.OptLblVelo.TabIndex = 30;
+            this.OptLblVelo.Text = "Velocity";
             // 
-            // OptScrBarLife
+            // OptLblVeloAgl
             // 
-            this.OptScrBarLife.LargeChange = 1;
-            this.OptScrBarLife.Location = new System.Drawing.Point(235, 111);
-            this.OptScrBarLife.Name = "OptScrBarLife";
-            this.OptScrBarLife.Size = new System.Drawing.Size(80, 17);
-            this.OptScrBarLife.TabIndex = 18;
-            this.OptScrBarLife.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarLife_Scroll);
+            this.OptLblVeloAgl.AutoSize = true;
+            this.OptLblVeloAgl.Location = new System.Drawing.Point(10, 43);
+            this.OptLblVeloAgl.Name = "OptLblVeloAgl";
+            this.OptLblVeloAgl.Size = new System.Drawing.Size(37, 13);
+            this.OptLblVeloAgl.TabIndex = 29;
+            this.OptLblVeloAgl.Text = "Angle:";
             // 
-            // OptLblNumPartVal
+            // OptLblVeloSpd
             // 
-            this.OptLblNumPartVal.AutoSize = true;
-            this.OptLblNumPartVal.Location = new System.Drawing.Point(318, 98);
-            this.OptLblNumPartVal.Name = "OptLblNumPartVal";
-            this.OptLblNumPartVal.Size = new System.Drawing.Size(13, 13);
-            this.OptLblNumPartVal.TabIndex = 19;
-            this.OptLblNumPartVal.Text = "0";
+            this.OptLblVeloSpd.AutoSize = true;
+            this.OptLblVeloSpd.Location = new System.Drawing.Point(10, 26);
+            this.OptLblVeloSpd.Name = "OptLblVeloSpd";
+            this.OptLblVeloSpd.Size = new System.Drawing.Size(41, 13);
+            this.OptLblVeloSpd.TabIndex = 28;
+            this.OptLblVeloSpd.Text = "Speed:";
             // 
-            // OptLblLifeVal
+            // OptScrBarGrvy
             // 
-            this.OptLblLifeVal.AutoSize = true;
-            this.OptLblLifeVal.Location = new System.Drawing.Point(318, 115);
-            this.OptLblLifeVal.Name = "OptLblLifeVal";
-            this.OptLblLifeVal.Size = new System.Drawing.Size(13, 13);
-            this.OptLblLifeVal.TabIndex = 20;
-            this.OptLblLifeVal.Text = "0";
-            // 
-            // OptLblPhy
-            // 
-            this.OptLblPhy.AutoSize = true;
-            this.OptLblPhy.Location = new System.Drawing.Point(6, 72);
-            this.OptLblPhy.Name = "OptLblPhy";
-            this.OptLblPhy.Size = new System.Drawing.Size(38, 13);
-            this.OptLblPhy.TabIndex = 21;
-            this.OptLblPhy.Text = "Physic";
-            // 
-            // OptLblWind
-            // 
-            this.OptLblWind.AutoSize = true;
-            this.OptLblWind.Location = new System.Drawing.Point(8, 98);
-            this.OptLblWind.Name = "OptLblWind";
-            this.OptLblWind.Size = new System.Drawing.Size(35, 13);
-            this.OptLblWind.TabIndex = 22;
-            this.OptLblWind.Text = "Wind:";
-            // 
-            // OptLblGrvy
-            // 
-            this.OptLblGrvy.AutoSize = true;
-            this.OptLblGrvy.Location = new System.Drawing.Point(8, 115);
-            this.OptLblGrvy.Name = "OptLblGrvy";
-            this.OptLblGrvy.Size = new System.Drawing.Size(43, 13);
-            this.OptLblGrvy.TabIndex = 23;
-            this.OptLblGrvy.Text = "Gravity:";
-            // 
-            // OptLblWindVal
-            // 
-            this.OptLblWindVal.AutoSize = true;
-            this.OptLblWindVal.Location = new System.Drawing.Point(134, 98);
-            this.OptLblWindVal.Name = "OptLblWindVal";
-            this.OptLblWindVal.Size = new System.Drawing.Size(13, 13);
-            this.OptLblWindVal.TabIndex = 24;
-            this.OptLblWindVal.Text = "0";
-            // 
-            // OptLblGrvyVal
-            // 
-            this.OptLblGrvyVal.AutoSize = true;
-            this.OptLblGrvyVal.Location = new System.Drawing.Point(134, 115);
-            this.OptLblGrvyVal.Name = "OptLblGrvyVal";
-            this.OptLblGrvyVal.Size = new System.Drawing.Size(13, 13);
-            this.OptLblGrvyVal.TabIndex = 25;
-            this.OptLblGrvyVal.Text = "0";
+            this.OptScrBarGrvy.LargeChange = 1;
+            this.OptScrBarGrvy.Location = new System.Drawing.Point(227, 42);
+            this.OptScrBarGrvy.Name = "OptScrBarGrvy";
+            this.OptScrBarGrvy.Size = new System.Drawing.Size(80, 17);
+            this.OptScrBarGrvy.TabIndex = 27;
+            this.OptScrBarGrvy.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarGrvy_Scroll);
             // 
             // OptScrBarWind
             // 
             this.OptScrBarWind.LargeChange = 1;
-            this.OptScrBarWind.Location = new System.Drawing.Point(51, 94);
+            this.OptScrBarWind.Location = new System.Drawing.Point(227, 25);
             this.OptScrBarWind.Name = "OptScrBarWind";
             this.OptScrBarWind.Size = new System.Drawing.Size(80, 17);
             this.OptScrBarWind.TabIndex = 26;
             this.OptScrBarWind.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarWind_Scroll);
             // 
-            // OptScrBarGrvy
+            // OptLblGrvyVal
             // 
-            this.OptScrBarGrvy.LargeChange = 1;
-            this.OptScrBarGrvy.Location = new System.Drawing.Point(51, 111);
-            this.OptScrBarGrvy.Name = "OptScrBarGrvy";
-            this.OptScrBarGrvy.Size = new System.Drawing.Size(80, 17);
-            this.OptScrBarGrvy.TabIndex = 27;
-            this.OptScrBarGrvy.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarGrvy_Scroll);
+            this.OptLblGrvyVal.AutoSize = true;
+            this.OptLblGrvyVal.Location = new System.Drawing.Point(310, 46);
+            this.OptLblGrvyVal.Name = "OptLblGrvyVal";
+            this.OptLblGrvyVal.Size = new System.Drawing.Size(13, 13);
+            this.OptLblGrvyVal.TabIndex = 25;
+            this.OptLblGrvyVal.Text = "0";
+            // 
+            // OptLblWindVal
+            // 
+            this.OptLblWindVal.AutoSize = true;
+            this.OptLblWindVal.Location = new System.Drawing.Point(310, 29);
+            this.OptLblWindVal.Name = "OptLblWindVal";
+            this.OptLblWindVal.Size = new System.Drawing.Size(13, 13);
+            this.OptLblWindVal.TabIndex = 24;
+            this.OptLblWindVal.Text = "0";
+            // 
+            // OptLblGrvy
+            // 
+            this.OptLblGrvy.AutoSize = true;
+            this.OptLblGrvy.Location = new System.Drawing.Point(184, 46);
+            this.OptLblGrvy.Name = "OptLblGrvy";
+            this.OptLblGrvy.Size = new System.Drawing.Size(43, 13);
+            this.OptLblGrvy.TabIndex = 23;
+            this.OptLblGrvy.Text = "Gravity:";
+            // 
+            // OptLblWind
+            // 
+            this.OptLblWind.AutoSize = true;
+            this.OptLblWind.Location = new System.Drawing.Point(184, 29);
+            this.OptLblWind.Name = "OptLblWind";
+            this.OptLblWind.Size = new System.Drawing.Size(35, 13);
+            this.OptLblWind.TabIndex = 22;
+            this.OptLblWind.Text = "Wind:";
+            // 
+            // OptLblPhy
+            // 
+            this.OptLblPhy.AutoSize = true;
+            this.OptLblPhy.Location = new System.Drawing.Point(182, 3);
+            this.OptLblPhy.Name = "OptLblPhy";
+            this.OptLblPhy.Size = new System.Drawing.Size(38, 13);
+            this.OptLblPhy.TabIndex = 21;
+            this.OptLblPhy.Text = "Physic";
+            // 
+            // OptLblLifeVal
+            // 
+            this.OptLblLifeVal.AutoSize = true;
+            this.OptLblLifeVal.Location = new System.Drawing.Point(146, 114);
+            this.OptLblLifeVal.Name = "OptLblLifeVal";
+            this.OptLblLifeVal.Size = new System.Drawing.Size(13, 13);
+            this.OptLblLifeVal.TabIndex = 20;
+            this.OptLblLifeVal.Text = "0";
+            // 
+            // OptLblNumPartVal
+            // 
+            this.OptLblNumPartVal.AutoSize = true;
+            this.OptLblNumPartVal.Location = new System.Drawing.Point(146, 97);
+            this.OptLblNumPartVal.Name = "OptLblNumPartVal";
+            this.OptLblNumPartVal.Size = new System.Drawing.Size(13, 13);
+            this.OptLblNumPartVal.TabIndex = 19;
+            this.OptLblNumPartVal.Text = "0";
+            // 
+            // OptScrBarLife
+            // 
+            this.OptScrBarLife.LargeChange = 1;
+            this.OptScrBarLife.Location = new System.Drawing.Point(61, 110);
+            this.OptScrBarLife.Name = "OptScrBarLife";
+            this.OptScrBarLife.Size = new System.Drawing.Size(80, 17);
+            this.OptScrBarLife.TabIndex = 18;
+            this.OptScrBarLife.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarLife_Scroll);
+            // 
+            // OptScrBarNumPart
+            // 
+            this.OptScrBarNumPart.LargeChange = 1;
+            this.OptScrBarNumPart.Location = new System.Drawing.Point(61, 93);
+            this.OptScrBarNumPart.Name = "OptScrBarNumPart";
+            this.OptScrBarNumPart.Size = new System.Drawing.Size(80, 17);
+            this.OptScrBarNumPart.TabIndex = 17;
+            this.OptScrBarNumPart.Scroll += new System.Windows.Forms.ScrollEventHandler(this.OptScrBarNumPart_Scroll);
+            // 
+            // OptLblLife
+            // 
+            this.OptLblLife.AutoSize = true;
+            this.OptLblLife.Location = new System.Drawing.Point(8, 114);
+            this.OptLblLife.Name = "OptLblLife";
+            this.OptLblLife.Size = new System.Drawing.Size(27, 13);
+            this.OptLblLife.TabIndex = 16;
+            this.OptLblLife.Text = "Life:";
+            // 
+            // OptLblNumPart
+            // 
+            this.OptLblNumPart.AutoSize = true;
+            this.OptLblNumPart.Location = new System.Drawing.Point(8, 97);
+            this.OptLblNumPart.Name = "OptLblNumPart";
+            this.OptLblNumPart.Size = new System.Drawing.Size(50, 13);
+            this.OptLblNumPart.TabIndex = 15;
+            this.OptLblNumPart.Text = "Particles:";
+            // 
+            // OptLblPart
+            // 
+            this.OptLblPart.AutoSize = true;
+            this.OptLblPart.Location = new System.Drawing.Point(8, 71);
+            this.OptLblPart.Name = "OptLblPart";
+            this.OptLblPart.Size = new System.Drawing.Size(42, 13);
+            this.OptLblPart.TabIndex = 14;
+            this.OptLblPart.Text = "Particle";
             // 
             // ColorTab
             // 
@@ -479,68 +672,95 @@
             this.ColorTab.Text = "Color";
             this.ColorTab.UseVisualStyleBackColor = true;
             // 
-            // ColLblMin
+            // ColScrBarMaxB
             // 
-            this.ColLblMin.AutoSize = true;
-            this.ColLblMin.Location = new System.Drawing.Point(6, 3);
-            this.ColLblMin.Name = "ColLblMin";
-            this.ColLblMin.Size = new System.Drawing.Size(75, 13);
-            this.ColLblMin.TabIndex = 0;
-            this.ColLblMin.Text = "Color Minimum";
+            this.ColScrBarMaxB.LargeChange = 1;
+            this.ColScrBarMaxB.Location = new System.Drawing.Point(172, 70);
+            this.ColScrBarMaxB.Name = "ColScrBarMaxB";
+            this.ColScrBarMaxB.Size = new System.Drawing.Size(80, 17);
+            this.ColScrBarMaxB.TabIndex = 17;
+            this.ColScrBarMaxB.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ColScrBarMaxB_Scroll);
             // 
-            // ColLblMinR
+            // ColScrBarMaxG
             // 
-            this.ColLblMinR.AutoSize = true;
-            this.ColLblMinR.Location = new System.Drawing.Point(6, 31);
-            this.ColLblMinR.Name = "ColLblMinR";
-            this.ColLblMinR.Size = new System.Drawing.Size(18, 13);
-            this.ColLblMinR.TabIndex = 1;
-            this.ColLblMinR.Text = "R:";
+            this.ColScrBarMaxG.LargeChange = 1;
+            this.ColScrBarMaxG.Location = new System.Drawing.Point(172, 49);
+            this.ColScrBarMaxG.Name = "ColScrBarMaxG";
+            this.ColScrBarMaxG.Size = new System.Drawing.Size(80, 17);
+            this.ColScrBarMaxG.TabIndex = 16;
+            this.ColScrBarMaxG.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ColScrBarMaxG_Scroll);
             // 
-            // ColLblMinG
+            // ColScrBarMaxR
             // 
-            this.ColLblMinG.AutoSize = true;
-            this.ColLblMinG.Location = new System.Drawing.Point(6, 53);
-            this.ColLblMinG.Name = "ColLblMinG";
-            this.ColLblMinG.Size = new System.Drawing.Size(18, 13);
-            this.ColLblMinG.TabIndex = 2;
-            this.ColLblMinG.Text = "G:";
+            this.ColScrBarMaxR.LargeChange = 1;
+            this.ColScrBarMaxR.Location = new System.Drawing.Point(172, 27);
+            this.ColScrBarMaxR.Name = "ColScrBarMaxR";
+            this.ColScrBarMaxR.Size = new System.Drawing.Size(80, 17);
+            this.ColScrBarMaxR.TabIndex = 15;
+            this.ColScrBarMaxR.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ColScrBarMaxR_Scroll);
             // 
-            // ColLblMinB
+            // ColLblMaxBVal
             // 
-            this.ColLblMinB.AutoSize = true;
-            this.ColLblMinB.Location = new System.Drawing.Point(6, 74);
-            this.ColLblMinB.Name = "ColLblMinB";
-            this.ColLblMinB.Size = new System.Drawing.Size(17, 13);
-            this.ColLblMinB.TabIndex = 3;
-            this.ColLblMinB.Text = "B:";
+            this.ColLblMaxBVal.AutoSize = true;
+            this.ColLblMaxBVal.Location = new System.Drawing.Point(255, 74);
+            this.ColLblMaxBVal.Name = "ColLblMaxBVal";
+            this.ColLblMaxBVal.Size = new System.Drawing.Size(13, 13);
+            this.ColLblMaxBVal.TabIndex = 14;
+            this.ColLblMaxBVal.Text = "0";
             // 
-            // ColLblMinGVal
+            // ColLblMaxGVal
             // 
-            this.ColLblMinGVal.AutoSize = true;
-            this.ColLblMinGVal.Location = new System.Drawing.Point(110, 53);
-            this.ColLblMinGVal.Name = "ColLblMinGVal";
-            this.ColLblMinGVal.Size = new System.Drawing.Size(13, 13);
-            this.ColLblMinGVal.TabIndex = 4;
-            this.ColLblMinGVal.Text = "0";
+            this.ColLblMaxGVal.AutoSize = true;
+            this.ColLblMaxGVal.Location = new System.Drawing.Point(255, 53);
+            this.ColLblMaxGVal.Name = "ColLblMaxGVal";
+            this.ColLblMaxGVal.Size = new System.Drawing.Size(13, 13);
+            this.ColLblMaxGVal.TabIndex = 13;
+            this.ColLblMaxGVal.Text = "0";
             // 
-            // ColLblMinRVal
+            // ColLblMaxRVal
             // 
-            this.ColLblMinRVal.AutoSize = true;
-            this.ColLblMinRVal.Location = new System.Drawing.Point(110, 31);
-            this.ColLblMinRVal.Name = "ColLblMinRVal";
-            this.ColLblMinRVal.Size = new System.Drawing.Size(13, 13);
-            this.ColLblMinRVal.TabIndex = 5;
-            this.ColLblMinRVal.Text = "0";
+            this.ColLblMaxRVal.AutoSize = true;
+            this.ColLblMaxRVal.Location = new System.Drawing.Point(255, 31);
+            this.ColLblMaxRVal.Name = "ColLblMaxRVal";
+            this.ColLblMaxRVal.Size = new System.Drawing.Size(13, 13);
+            this.ColLblMaxRVal.TabIndex = 12;
+            this.ColLblMaxRVal.Text = "0";
             // 
-            // ColLblMinBVal
+            // ColLblMaxB
             // 
-            this.ColLblMinBVal.AutoSize = true;
-            this.ColLblMinBVal.Location = new System.Drawing.Point(110, 74);
-            this.ColLblMinBVal.Name = "ColLblMinBVal";
-            this.ColLblMinBVal.Size = new System.Drawing.Size(13, 13);
-            this.ColLblMinBVal.TabIndex = 6;
-            this.ColLblMinBVal.Text = "0";
+            this.ColLblMaxB.AutoSize = true;
+            this.ColLblMaxB.Location = new System.Drawing.Point(151, 74);
+            this.ColLblMaxB.Name = "ColLblMaxB";
+            this.ColLblMaxB.Size = new System.Drawing.Size(17, 13);
+            this.ColLblMaxB.TabIndex = 11;
+            this.ColLblMaxB.Text = "B:";
+            // 
+            // ColLblMaxG
+            // 
+            this.ColLblMaxG.AutoSize = true;
+            this.ColLblMaxG.Location = new System.Drawing.Point(151, 53);
+            this.ColLblMaxG.Name = "ColLblMaxG";
+            this.ColLblMaxG.Size = new System.Drawing.Size(18, 13);
+            this.ColLblMaxG.TabIndex = 10;
+            this.ColLblMaxG.Text = "G:";
+            // 
+            // ColLblMaxR
+            // 
+            this.ColLblMaxR.AutoSize = true;
+            this.ColLblMaxR.Location = new System.Drawing.Point(151, 31);
+            this.ColLblMaxR.Name = "ColLblMaxR";
+            this.ColLblMaxR.Size = new System.Drawing.Size(18, 13);
+            this.ColLblMaxR.TabIndex = 9;
+            this.ColLblMaxR.Text = "R:";
+            // 
+            // ColLblMax
+            // 
+            this.ColLblMax.AutoSize = true;
+            this.ColLblMax.Location = new System.Drawing.Point(151, 3);
+            this.ColLblMax.Name = "ColLblMax";
+            this.ColLblMax.Size = new System.Drawing.Size(78, 13);
+            this.ColLblMax.TabIndex = 8;
+            this.ColLblMax.Text = "Color Maximum";
             // 
             // ColScrBarMinR
             // 
@@ -569,95 +789,68 @@
             this.ColScrBarMinB.TabIndex = 7;
             this.ColScrBarMinB.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ColScrBarMinB_Scroll);
             // 
-            // ColLblMax
+            // ColLblMinBVal
             // 
-            this.ColLblMax.AutoSize = true;
-            this.ColLblMax.Location = new System.Drawing.Point(151, 3);
-            this.ColLblMax.Name = "ColLblMax";
-            this.ColLblMax.Size = new System.Drawing.Size(78, 13);
-            this.ColLblMax.TabIndex = 8;
-            this.ColLblMax.Text = "Color Maximum";
+            this.ColLblMinBVal.AutoSize = true;
+            this.ColLblMinBVal.Location = new System.Drawing.Point(110, 74);
+            this.ColLblMinBVal.Name = "ColLblMinBVal";
+            this.ColLblMinBVal.Size = new System.Drawing.Size(13, 13);
+            this.ColLblMinBVal.TabIndex = 6;
+            this.ColLblMinBVal.Text = "0";
             // 
-            // ColLblMaxR
+            // ColLblMinRVal
             // 
-            this.ColLblMaxR.AutoSize = true;
-            this.ColLblMaxR.Location = new System.Drawing.Point(151, 31);
-            this.ColLblMaxR.Name = "ColLblMaxR";
-            this.ColLblMaxR.Size = new System.Drawing.Size(18, 13);
-            this.ColLblMaxR.TabIndex = 9;
-            this.ColLblMaxR.Text = "R:";
+            this.ColLblMinRVal.AutoSize = true;
+            this.ColLblMinRVal.Location = new System.Drawing.Point(110, 31);
+            this.ColLblMinRVal.Name = "ColLblMinRVal";
+            this.ColLblMinRVal.Size = new System.Drawing.Size(13, 13);
+            this.ColLblMinRVal.TabIndex = 5;
+            this.ColLblMinRVal.Text = "0";
             // 
-            // ColLblMaxG
+            // ColLblMinGVal
             // 
-            this.ColLblMaxG.AutoSize = true;
-            this.ColLblMaxG.Location = new System.Drawing.Point(151, 53);
-            this.ColLblMaxG.Name = "ColLblMaxG";
-            this.ColLblMaxG.Size = new System.Drawing.Size(18, 13);
-            this.ColLblMaxG.TabIndex = 10;
-            this.ColLblMaxG.Text = "G:";
+            this.ColLblMinGVal.AutoSize = true;
+            this.ColLblMinGVal.Location = new System.Drawing.Point(110, 53);
+            this.ColLblMinGVal.Name = "ColLblMinGVal";
+            this.ColLblMinGVal.Size = new System.Drawing.Size(13, 13);
+            this.ColLblMinGVal.TabIndex = 4;
+            this.ColLblMinGVal.Text = "0";
             // 
-            // ColLblMaxB
+            // ColLblMinB
             // 
-            this.ColLblMaxB.AutoSize = true;
-            this.ColLblMaxB.Location = new System.Drawing.Point(151, 74);
-            this.ColLblMaxB.Name = "ColLblMaxB";
-            this.ColLblMaxB.Size = new System.Drawing.Size(17, 13);
-            this.ColLblMaxB.TabIndex = 11;
-            this.ColLblMaxB.Text = "B:";
+            this.ColLblMinB.AutoSize = true;
+            this.ColLblMinB.Location = new System.Drawing.Point(6, 74);
+            this.ColLblMinB.Name = "ColLblMinB";
+            this.ColLblMinB.Size = new System.Drawing.Size(17, 13);
+            this.ColLblMinB.TabIndex = 3;
+            this.ColLblMinB.Text = "B:";
             // 
-            // ColLblMaxRVal
+            // ColLblMinG
             // 
-            this.ColLblMaxRVal.AutoSize = true;
-            this.ColLblMaxRVal.Location = new System.Drawing.Point(255, 31);
-            this.ColLblMaxRVal.Name = "ColLblMaxRVal";
-            this.ColLblMaxRVal.Size = new System.Drawing.Size(13, 13);
-            this.ColLblMaxRVal.TabIndex = 12;
-            this.ColLblMaxRVal.Text = "0";
+            this.ColLblMinG.AutoSize = true;
+            this.ColLblMinG.Location = new System.Drawing.Point(6, 53);
+            this.ColLblMinG.Name = "ColLblMinG";
+            this.ColLblMinG.Size = new System.Drawing.Size(18, 13);
+            this.ColLblMinG.TabIndex = 2;
+            this.ColLblMinG.Text = "G:";
             // 
-            // ColLblMaxGVal
+            // ColLblMinR
             // 
-            this.ColLblMaxGVal.AutoSize = true;
-            this.ColLblMaxGVal.Location = new System.Drawing.Point(255, 53);
-            this.ColLblMaxGVal.Name = "ColLblMaxGVal";
-            this.ColLblMaxGVal.Size = new System.Drawing.Size(13, 13);
-            this.ColLblMaxGVal.TabIndex = 13;
-            this.ColLblMaxGVal.Text = "0";
+            this.ColLblMinR.AutoSize = true;
+            this.ColLblMinR.Location = new System.Drawing.Point(6, 31);
+            this.ColLblMinR.Name = "ColLblMinR";
+            this.ColLblMinR.Size = new System.Drawing.Size(18, 13);
+            this.ColLblMinR.TabIndex = 1;
+            this.ColLblMinR.Text = "R:";
             // 
-            // ColLblMaxBVal
+            // ColLblMin
             // 
-            this.ColLblMaxBVal.AutoSize = true;
-            this.ColLblMaxBVal.Location = new System.Drawing.Point(255, 74);
-            this.ColLblMaxBVal.Name = "ColLblMaxBVal";
-            this.ColLblMaxBVal.Size = new System.Drawing.Size(13, 13);
-            this.ColLblMaxBVal.TabIndex = 14;
-            this.ColLblMaxBVal.Text = "0";
-            // 
-            // ColScrBarMaxR
-            // 
-            this.ColScrBarMaxR.LargeChange = 1;
-            this.ColScrBarMaxR.Location = new System.Drawing.Point(172, 27);
-            this.ColScrBarMaxR.Name = "ColScrBarMaxR";
-            this.ColScrBarMaxR.Size = new System.Drawing.Size(80, 17);
-            this.ColScrBarMaxR.TabIndex = 15;
-            this.ColScrBarMaxR.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ColScrBarMaxR_Scroll);
-            // 
-            // ColScrBarMaxG
-            // 
-            this.ColScrBarMaxG.LargeChange = 1;
-            this.ColScrBarMaxG.Location = new System.Drawing.Point(172, 49);
-            this.ColScrBarMaxG.Name = "ColScrBarMaxG";
-            this.ColScrBarMaxG.Size = new System.Drawing.Size(80, 17);
-            this.ColScrBarMaxG.TabIndex = 16;
-            this.ColScrBarMaxG.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ColScrBarMaxG_Scroll);
-            // 
-            // ColScrBarMaxB
-            // 
-            this.ColScrBarMaxB.LargeChange = 1;
-            this.ColScrBarMaxB.Location = new System.Drawing.Point(172, 70);
-            this.ColScrBarMaxB.Name = "ColScrBarMaxB";
-            this.ColScrBarMaxB.Size = new System.Drawing.Size(80, 17);
-            this.ColScrBarMaxB.TabIndex = 17;
-            this.ColScrBarMaxB.Scroll += new System.Windows.Forms.ScrollEventHandler(this.ColScrBarMaxB_Scroll);
+            this.ColLblMin.AutoSize = true;
+            this.ColLblMin.Location = new System.Drawing.Point(6, 3);
+            this.ColLblMin.Name = "ColLblMin";
+            this.ColLblMin.Size = new System.Drawing.Size(75, 13);
+            this.ColLblMin.TabIndex = 0;
+            this.ColLblMin.Text = "Color Minimum";
             // 
             // Form1
             // 
@@ -676,6 +869,8 @@
             this.TabControl.ResumeLayout(false);
             this.SysTab.ResumeLayout(false);
             this.SysTab.PerformLayout();
+            this.PosTab.ResumeLayout(false);
+            this.PosTab.PerformLayout();
             this.BscTab.ResumeLayout(false);
             this.BscTab.PerformLayout();
             this.ColorTab.ResumeLayout(false);
@@ -692,20 +887,6 @@
         private System.Windows.Forms.Label SysLbl;
         private System.Windows.Forms.ComboBox SysCbb;
         private System.Windows.Forms.TabPage BscTab;
-        private System.Windows.Forms.Label OptLblVeloAglVal;
-        private System.Windows.Forms.Label OptLblVeloSpdVal;
-        private System.Windows.Forms.HScrollBar OptScrBarAgl;
-        private System.Windows.Forms.HScrollBar OptScrBarSpeed;
-        private System.Windows.Forms.Label OptLblVelo;
-        private System.Windows.Forms.Label OptLblVeloAgl;
-        private System.Windows.Forms.HScrollBar OptScrBarPosY;
-        private System.Windows.Forms.Label OptLblVeloSpd;
-        private System.Windows.Forms.Label OptLblPosYVal;
-        private System.Windows.Forms.Label OptLblPosY;
-        private System.Windows.Forms.Label OptLblPosXVal;
-        private System.Windows.Forms.Label OptLblPosX;
-        private System.Windows.Forms.HScrollBar OptScrBarPosX;
-        private System.Windows.Forms.Label OptLblPos;
         private System.Windows.Forms.Label OptLblLifeVal;
         private System.Windows.Forms.Label OptLblNumPartVal;
         private System.Windows.Forms.HScrollBar OptScrBarLife;
@@ -741,6 +922,37 @@
         private System.Windows.Forms.Label ColLblMaxG;
         private System.Windows.Forms.Label ColLblMaxR;
         private System.Windows.Forms.Label ColLblMax;
+        private System.Windows.Forms.TabPage PosTab;
+        private System.Windows.Forms.Button SysBtnStop;
+        private System.Windows.Forms.Button SysBtnStart;
+        private System.Windows.Forms.HScrollBar PosScrBarMinPosY;
+        private System.Windows.Forms.Label PosLblMinPosYVal;
+        private System.Windows.Forms.Label PosLblMinPosY;
+        private System.Windows.Forms.Label PosLblMinPosXVal;
+        private System.Windows.Forms.Label PosLblMinPosX;
+        private System.Windows.Forms.HScrollBar PosScrBarMinPosX;
+        private System.Windows.Forms.Label PosLblPosMin;
+        private System.Windows.Forms.Label OptLblVeloAglVal;
+        private System.Windows.Forms.Label OptLblVeloSpdVal;
+        private System.Windows.Forms.HScrollBar OptScrBarAgl;
+        private System.Windows.Forms.HScrollBar OptScrBarSpeed;
+        private System.Windows.Forms.Label OptLblVelo;
+        private System.Windows.Forms.Label OptLblVeloAgl;
+        private System.Windows.Forms.Label OptLblVeloSpd;
+        private System.Windows.Forms.Label PosLblMaxPosYVal;
+        private System.Windows.Forms.Label PosLblMaxPosXVal;
+        private System.Windows.Forms.Label PosLblMaxPosY;
+        private System.Windows.Forms.Label PosLblMaxPosX;
+        private System.Windows.Forms.Label PosLblPosMax;
+        private System.Windows.Forms.HScrollBar PosScrBarMaxPosY;
+        private System.Windows.Forms.HScrollBar PosScrBarMaxPosX;
+        private System.Windows.Forms.HScrollBar OptScrBarInter;
+        private System.Windows.Forms.HScrollBar OptScrBarCyle;
+        private System.Windows.Forms.Label OptLblInterVal;
+        private System.Windows.Forms.Label OptLblCycleVal;
+        private System.Windows.Forms.Label OptLblCycle;
+        private System.Windows.Forms.Label OptLblInter;
+        private System.Windows.Forms.Label OptLblEmission;
     }
 }
 
