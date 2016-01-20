@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FontainButton = new System.Windows.Forms.Button();
             this.DrawBox = new System.Windows.Forms.PictureBox();
             this.TabControl = new System.Windows.Forms.TabControl();
             this.SysTab = new System.Windows.Forms.TabPage();
-            this.SysBtnStop = new System.Windows.Forms.Button();
             this.SysBtnStart = new System.Windows.Forms.Button();
             this.SysLbl = new System.Windows.Forms.Label();
             this.SysCbb = new System.Windows.Forms.ComboBox();
@@ -109,17 +107,6 @@
             this.ColorTab.SuspendLayout();
             this.SuspendLayout();
             // 
-            // FontainButton
-            // 
-            this.FontainButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.FontainButton.Location = new System.Drawing.Point(525, 6);
-            this.FontainButton.Name = "FontainButton";
-            this.FontainButton.Size = new System.Drawing.Size(75, 24);
-            this.FontainButton.TabIndex = 1;
-            this.FontainButton.Text = "Fountain";
-            this.FontainButton.UseVisualStyleBackColor = true;
-            this.FontainButton.Click += new System.EventHandler(this.FontainButton_Click);
-            // 
             // DrawBox
             // 
             this.DrawBox.BackColor = System.Drawing.SystemColors.WindowText;
@@ -151,11 +138,9 @@
             // 
             // SysTab
             // 
-            this.SysTab.Controls.Add(this.SysBtnStop);
             this.SysTab.Controls.Add(this.SysBtnStart);
             this.SysTab.Controls.Add(this.SysLbl);
             this.SysTab.Controls.Add(this.SysCbb);
-            this.SysTab.Controls.Add(this.FontainButton);
             this.SysTab.Location = new System.Drawing.Point(4, 22);
             this.SysTab.Name = "SysTab";
             this.SysTab.Padding = new System.Windows.Forms.Padding(3);
@@ -164,19 +149,9 @@
             this.SysTab.Text = "System";
             this.SysTab.UseVisualStyleBackColor = true;
             // 
-            // SysBtnStop
-            // 
-            this.SysBtnStop.Location = new System.Drawing.Point(527, 113);
-            this.SysBtnStop.Name = "SysBtnStop";
-            this.SysBtnStop.Size = new System.Drawing.Size(75, 23);
-            this.SysBtnStop.TabIndex = 5;
-            this.SysBtnStop.Text = "Stop";
-            this.SysBtnStop.UseVisualStyleBackColor = true;
-            this.SysBtnStop.Click += new System.EventHandler(this.SysBtnStop_Click);
-            // 
             // SysBtnStart
             // 
-            this.SysBtnStart.Location = new System.Drawing.Point(446, 113);
+            this.SysBtnStart.Location = new System.Drawing.Point(525, 113);
             this.SysBtnStart.Name = "SysBtnStart";
             this.SysBtnStart.Size = new System.Drawing.Size(75, 23);
             this.SysBtnStart.TabIndex = 4;
@@ -880,7 +855,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button FontainButton;
         private System.Windows.Forms.PictureBox DrawBox;
         private System.Windows.Forms.TabControl TabControl;
         private System.Windows.Forms.TabPage SysTab;
@@ -923,7 +897,6 @@
         private System.Windows.Forms.Label ColLblMaxR;
         private System.Windows.Forms.Label ColLblMax;
         private System.Windows.Forms.TabPage PosTab;
-        private System.Windows.Forms.Button SysBtnStop;
         private System.Windows.Forms.Button SysBtnStart;
         private System.Windows.Forms.HScrollBar PosScrBarMinPosY;
         private System.Windows.Forms.Label PosLblMinPosYVal;
