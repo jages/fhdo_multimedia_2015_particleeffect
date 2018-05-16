@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Dynamic;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ParticleTest
 {
-    public partial class Form1 : Form
+    public partial class ParticleTestForm : Form
     {
-        public bool isrunning_fountain;
-        public ParticleState state;
+        private const float AngleDefault = 270f;
 
-        private Thread _particlethread;
-        private Thread _fountainspawnthread;
+        private bool _isEmitting;
+        private readonly ParticleManager _manager;
+
+        private readonly Thread _particlethread;
+        private Thread _emitterThread;
 
         // Gui members
         private float _minPosX;
@@ -33,7 +31,7 @@ namespace ParticleTest
         private float _wind;
         private float _gravity;
 
-        private int _numParticle;
+        private int _particleAmount;
         private int _life;
 
         private int _minRed;
@@ -51,15 +49,15 @@ namespace ParticleTest
         /// <summary>
         /// Form initialization
         /// </summary>
-        public Form1()
+        public ParticleTestForm()
         {
-            state = new ParticleState();
-            InitializeComponent();
+            _manager = new ParticleManager();
+            InitializeComponents();
             init_Gui();
 
-            _particlethread = new Thread(ParticleProc);
+            _particlethread = new Thread(ParticleLifeCycle);
             _particlethread.Start();
-            isrunning_fountain = false;
+            _isEmitting = false;
 
             //DrawPanel.Paint += new PaintEventHandler(DrawPanelPaint);
         }
@@ -67,87 +65,90 @@ namespace ParticleTest
         /// <summary>
         /// Updates particles and cleans up particle array
         /// </summary>
-        public void ParticleProc()
+        public void ParticleLifeCycle()
         {
-            try {
+            try
+            {
                 for (;;)
                 {
                     Thread.Sleep(20);
-                    List<int> remove = new List<int>();
-                    for (int i = 0; i < state.particlecount-1;i++)
+                    _manager.UpdateParticles();
+                    Invoke((MethodInvoker) (() =>
                     {
-                        if (state.particles[i].update())
-                            remove.Add(i);
-                    }
-                    
-                    foreach (int i in remove)
-                        state.removeparticle(i);
-
-                    //remove.Clear();
-                    //Invoke((MethodInvoker)(() => { DrawPanel.Invalidate(); DrawPanel.Update(); }));
-                    Invoke((MethodInvoker)(() => { DrawBox.Invalidate(); DrawBox.Update(); }));
+                        DrawBox.Invalidate();
+                        DrawBox.Update();
+                    }));
                 }
             }
             catch (ThreadAbortException ex)
             {
-                Debug.Print("Particle progress Thread aborted.");
+                Debug.Print("Particle display Thread aborted.");
             }
         }
 
         /// <summary>
         /// 'Emitter' for particles.
         /// </summary>
-        private void FountainProc()
+        private void EmitParticles()
         {
             try
             {
-                // definde new random-gen
-                Random rd = new Random();
-                // anzahl wellen
+                Random randomizer = new Random();
 
-                for (int i = 0; i < _cycle; i++) //default was 500 for fountain
+                for (int i = 0; i < _cycle; i++)
                 {
-                    // calc and set pos x & y for every particle with (rnd-value) * (difference between max x & min y | max y & min y) + min pos x & y
-                    // default drawbox width and height 
-                    float x = ((float)(rd.NextDouble() * (double)(_maxPosX - _minPosX)) + _minPosX);
-                    float y = ((float)(rd.NextDouble() * (double)(_maxPosY - _minPosY)) + _minPosY);
-
-                    Thread.Sleep(_interval);//default was 100
-                    // set the color for every particle
-                    Color col = Color.FromArgb((int)(rd.NextDouble() * (_maxRed - _minRed)) + _minRed,
-                                               (int)(rd.NextDouble() * (_maxGreen - _minGreen)) + _minGreen,
-                                               (int)(rd.NextDouble() * (_maxBlue - _minBlue)) + _minBlue);
-
-                    for (int n = 0; n < _numParticle; n++)
-                    {
-                        // calc and set angle for particle
-                        float angle = (float)(rd.NextDouble() * _angle) + (270f - (_angle / 2));
-                        // a new particle to the particle list
-                        state.addparticle(new Particle(x, y, _wind, _gravity, _life, angle, (float)rd.NextDouble() * _speed, col, true));
-                    }
-
+                    Thread.Sleep(_interval);
+                    GenerateParticles(randomizer);
                 }
             }
             catch (ThreadAbortException ex)
             {
                 Debug.Print("Particle generaton thread has stopped.");
             }
-            isrunning_fountain = false;
+
+            _isEmitting = false;
+        }
+
+        private void GenerateParticles(Random randomizer)
+        {
+                float xCoordinate = ((float) (randomizer.NextDouble() * (double) (_maxPosX - _minPosX)) + _minPosX);
+                float yCoordinate = ((float) (randomizer.NextDouble() * (double) (_maxPosY - _minPosY)) + _minPosY);
+
+                Color particleColor = Color.FromArgb(calulateRandomColor(randomizer, _maxRed, _minRed),
+                    calulateRandomColor(randomizer, _maxGreen, _minGreen),
+                    calulateRandomColor(randomizer, _maxBlue, _minBlue));
+
+                for (int n = 0; n < _particleAmount; n++)
+                {
+                    float angle = calculateRandomAngle(randomizer, _angle);
+                    _manager.AddParticle(new Particle(xCoordinate, yCoordinate, _wind, _gravity, _life, angle,
+                        (float) randomizer.NextDouble() * _speed, particleColor,
+                        true));
+                }
+        }
+        
+        private static int calulateRandomColor(Random randomizer, int maxValue, int minValue)
+        {
+            // use float cast to int to account for 0.x rounding errors
+            return (int) (randomizer.NextDouble() * (maxValue - minValue)) + minValue;
+        }
+
+        private static float calculateRandomAngle(Random randomizer, float angleRange)
+        {
+            return (float) (randomizer.NextDouble() * angleRange) + (AngleDefault - (angleRange / 2));
         }
 
         
 
+
         /// <summary>
-        /// draw the particle 
+        /// Draw Particles on DrawBox PaintEvent
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void DrawBox_Paint(object sender, PaintEventArgs e)
         {
-            for (int i = state.particlecount - 1; i > -1; i--)
-            {
-                state.particles[i].Draw(e.Graphics);
-            }
+            _manager.DrawParticles(e.Graphics);
         }
 
         /// <summary>
@@ -157,7 +158,7 @@ namespace ParticleTest
         {
             // region Initialize TabControl
 
-                // region TabPage Option
+            // region TabPage Option
 
             // Position components
 
@@ -196,7 +197,7 @@ namespace ParticleTest
 
             OptScrBarLife.Minimum = 1;
             OptScrBarLife.Maximum = 15;
-            
+
             // Emission components
 
             OptScrBarCyle.Minimum = 1;
@@ -205,7 +206,7 @@ namespace ParticleTest
             OptScrBarInter.Minimum = 25;
             OptScrBarInter.Maximum = 500;
 
-                // end region TabPage Option
+            // end region TabPage Option
 
             // region TabPage Color
 
@@ -259,7 +260,7 @@ namespace ParticleTest
 
             // TabPage System
 
-            string[] sItems = { "Firework", "Firework - Single", "Fountain", "Fire or Meteor", "Snow", "..." };
+            string[] sItems = {"Firework", "Firework - Single", "Fountain", "Fire or Meteor", "Snow", "..."};
             SysCbb.DataSource = sItems;
 
             // end region Initialize TabControl
@@ -270,7 +271,7 @@ namespace ParticleTest
         /// <summary>
         /// update all members with values from gui
         /// </summary>
-        private void setdefaultfromGUI()
+        private void SetdefaultfromGui()
         {
             _minPosX = PosScrBarMinPosX.Value;
             _maxPosX = PosScrBarMaxPosX.Value;
@@ -280,7 +281,7 @@ namespace ParticleTest
             _angle = OptScrBarAgl.Value;
             _wind = (OptScrBarWind.Value / 100f);
             _gravity = (OptScrBarGrvy.Value / 100f);
-            _numParticle = OptScrBarNumPart.Value;
+            _particleAmount = OptScrBarNumPart.Value;
             _life = OptScrBarLife.Value;
             _cycle = OptScrBarCyle.Value;
             _interval = OptScrBarInter.Value;
@@ -290,12 +291,14 @@ namespace ParticleTest
             _maxRed = ColScrBarMaxR.Value;
             _maxGreen = ColScrBarMaxG.Value;
             _maxBlue = ColScrBarMaxB.Value;
+
+            UpdateLabels();
         }
 
         /// <summary>
         /// update all labels with values
         /// </summary>
-        private void updateLabels()
+        private void UpdateLabels()
         {
             PosLblMinPosXVal.Text = PosScrBarMinPosX.Value.ToString();
             PosLblMinPosYVal.Text = PosScrBarMinPosY.Value.ToString();
@@ -340,7 +343,6 @@ namespace ParticleTest
                     break;
                 default:
                     break;
-
             }
         }
 
@@ -354,9 +356,9 @@ namespace ParticleTest
             PosScrBarMinPosY.Value = 1;
 
             // set max pos x & y
-            PosScrBarMaxPosX.Value = (DrawBox.Width -1);
-            PosScrBarMaxPosY.Value = (DrawBox.Height -1);
-            
+            PosScrBarMaxPosX.Value = (DrawBox.Width - 1);
+            PosScrBarMaxPosY.Value = (DrawBox.Height - 1);
+
             // set speed
             OptScrBarSpeed.Value = 100;
             // set angle
@@ -373,7 +375,7 @@ namespace ParticleTest
             OptScrBarCyle.Value = 50;
             // set interval
             OptScrBarInter.Value = 125;
-            
+
             // set max rgb
             ColScrBarMaxR.Value = 255;
             ColScrBarMaxG.Value = 255;
@@ -384,11 +386,7 @@ namespace ParticleTest
             ColScrBarMinG.Value = 0;
             ColScrBarMinB.Value = 0;
 
-            // update all labels with default values
-            updateLabels();
-            // set all members with values
-            setdefaultfromGUI();
-
+            SetdefaultfromGui();
         }
 
         private void DEFAULT_METEOR_VALUES()
@@ -398,8 +396,8 @@ namespace ParticleTest
             PosScrBarMinPosY.Value = (DrawBox.Height / 2);
 
             // set max pos x & y
-            PosScrBarMaxPosX.Value = (DrawBox.Width /2);
-            PosScrBarMaxPosY.Value = (DrawBox.Height /2);
+            PosScrBarMaxPosX.Value = (DrawBox.Width / 2);
+            PosScrBarMaxPosY.Value = (DrawBox.Height / 2);
 
             // set speed
             OptScrBarSpeed.Value = 29;
@@ -428,11 +426,7 @@ namespace ParticleTest
             ColScrBarMinG.Value = 0;
             ColScrBarMinB.Value = 0;
 
-            // update all labels with default values
-            updateLabels();
-            // set all members with values
-            setdefaultfromGUI();
-
+            SetdefaultfromGui();
         }
 
         private void DEFAULT_SNOW_VALUES()
@@ -442,7 +436,7 @@ namespace ParticleTest
             PosScrBarMinPosY.Value = 1;
 
             // set max pos x & y
-            PosScrBarMaxPosX.Value = (DrawBox.Width -1);
+            PosScrBarMaxPosX.Value = (DrawBox.Width - 1);
             PosScrBarMaxPosY.Value = 1;
 
             // set speed
@@ -472,22 +466,18 @@ namespace ParticleTest
             ColScrBarMinG.Value = 255;
             ColScrBarMinB.Value = 255;
 
-            // update all labels with default values
-            updateLabels();
-            // set all members with values
-            setdefaultfromGUI();
-
+            SetdefaultfromGui();
         }
 
         private void DEFAULT_FIREWORKSINGLE_VALUES()
         {
             // set min pos x & y
             PosScrBarMinPosX.Value = (DrawBox.Width / 2);
-            PosScrBarMinPosY.Value = (DrawBox.Height  /2);
+            PosScrBarMinPosY.Value = (DrawBox.Height / 2);
 
             // set max pos x & y
-            PosScrBarMaxPosX.Value = (DrawBox.Width /2);
-            PosScrBarMaxPosY.Value = (DrawBox.Height /2);
+            PosScrBarMaxPosX.Value = (DrawBox.Width / 2);
+            PosScrBarMaxPosY.Value = (DrawBox.Height / 2);
 
             // set speed
             OptScrBarSpeed.Value = 100;
@@ -516,11 +506,7 @@ namespace ParticleTest
             ColScrBarMinG.Value = 0;
             ColScrBarMinB.Value = 0;
 
-            // update all labels with default values
-            updateLabels();
-            // set all members with values
-            setdefaultfromGUI();
-
+            SetdefaultfromGui();
         }
 
         /// <summary>
@@ -562,11 +548,8 @@ namespace ParticleTest
             ColScrBarMinR.Value = 0;
             ColScrBarMinG.Value = 0;
             ColScrBarMinB.Value = 0;
-            
-            // updates gui-labels with default values
-            updateLabels();
-            // updates members with values from the scrollbars
-            setdefaultfromGUI();
+
+            SetdefaultfromGui();
         }
 
 
@@ -593,18 +576,16 @@ namespace ParticleTest
         /// <param name="e"></param>
         private void DrawBox_MouseClick(object sender, MouseEventArgs e)
         {
-            if (!isrunning_fountain)
+            if (!_isEmitting)
             {
-                _fountainspawnthread = new Thread(FountainProc);
-                _fountainspawnthread.Start();
+                _emitterThread = new Thread(EmitParticles);
+                _emitterThread.Start();
             }
-
         }
 
-        
 
         // region ScrollBar Eventhandler
-        
+
         /// <summary>
         /// define minimum X position based on scrollbar
         /// </summary>
@@ -612,7 +593,7 @@ namespace ParticleTest
         /// <param name="e"></param>
         private void OptScrBarMinPosX_Scroll(object sender, ScrollEventArgs e)
         {
-            _minPosX = (float)e.NewValue;
+            _minPosX = (float) e.NewValue;
             PosLblMinPosXVal.Text = e.NewValue.ToString();
 
             PosScrBarMaxPosX.Minimum = e.NewValue;
@@ -625,7 +606,7 @@ namespace ParticleTest
         /// <param name="e"></param>
         private void OptScrBarMinPosY_Scroll(object sender, ScrollEventArgs e)
         {
-            _minPosY = (float)e.NewValue;
+            _minPosY = (float) e.NewValue;
             PosLblMinPosYVal.Text = e.NewValue.ToString();
 
             PosScrBarMaxPosY.Minimum = e.NewValue;
@@ -638,7 +619,7 @@ namespace ParticleTest
         /// <param name="e"></param>
         private void PosScrBarMaxPosX_Scroll(object sender, ScrollEventArgs e)
         {
-            _maxPosX = (float)e.NewValue;
+            _maxPosX = (float) e.NewValue;
             PosLblMaxPosXVal.Text = e.NewValue.ToString();
 
             PosScrBarMinPosX.Maximum = e.NewValue;
@@ -651,11 +632,10 @@ namespace ParticleTest
         /// <param name="e"></param>
         private void PosScrBarMaxPosY_Scroll(object sender, ScrollEventArgs e)
         {
-            _maxPosY = (float)e.NewValue;
+            _maxPosY = (float) e.NewValue;
             PosLblMaxPosYVal.Text = e.NewValue.ToString();
 
             PosScrBarMinPosY.Maximum = e.NewValue;
-
         }
 
         /// <summary>
@@ -665,7 +645,7 @@ namespace ParticleTest
         /// <param name="e"></param>
         private void OptScrBarSpeed_Scroll(object sender, ScrollEventArgs e)
         {
-            _speed = (float)(e.NewValue / 100f);
+            _speed = (float) (e.NewValue / 100f);
             OptLblVeloSpdVal.Text = _speed.ToString();
         }
 
@@ -676,7 +656,7 @@ namespace ParticleTest
         /// <param name="e"></param>
         private void OptScrBarAgl_Scroll(object sender, ScrollEventArgs e)
         {
-            _angle = (float)e.NewValue;
+            _angle = (float) e.NewValue;
             OptLblVeloAglVal.Text = e.NewValue.ToString();
         }
 
@@ -687,7 +667,7 @@ namespace ParticleTest
         /// <param name="e"></param>
         private void OptScrBarWind_Scroll(object sender, ScrollEventArgs e)
         {
-            _wind = (float)(e.NewValue / 100f);
+            _wind = (float) (e.NewValue / 100f);
             OptLblWindVal.Text = _wind.ToString();
         }
 
@@ -698,7 +678,7 @@ namespace ParticleTest
         /// <param name="e"></param>
         private void OptScrBarGrvy_Scroll(object sender, ScrollEventArgs e)
         {
-            _gravity = (float)(e.NewValue / 100f);
+            _gravity = (float) (e.NewValue / 100f);
             OptLblGrvyVal.Text = _gravity.ToString();
         }
 
@@ -709,7 +689,7 @@ namespace ParticleTest
         /// <param name="e"></param>
         private void OptScrBarNumPart_Scroll(object sender, ScrollEventArgs e)
         {
-            _numParticle = e.NewValue;
+            _particleAmount = e.NewValue;
             OptLblNumPartVal.Text = e.NewValue.ToString();
         }
 
@@ -826,7 +806,6 @@ namespace ParticleTest
 
         // end region ScrollBar Eventhandler
 
-        
 
         /// <summary>
         /// start the system 
@@ -835,10 +814,10 @@ namespace ParticleTest
         /// <param name="e"></param>
         private void SysBtnStart_Click(object sender, EventArgs e)
         {
-            if (!isrunning_fountain)
+            if (!_isEmitting)
             {
-                _fountainspawnthread = new Thread(FountainProc);
-                _fountainspawnthread.Start();
+                _emitterThread = new Thread(EmitParticles);
+                _emitterThread.Start();
             }
         }
 
@@ -867,8 +846,6 @@ namespace ParticleTest
                 PosScrBarMaxPosY.Value = DrawBox.Height - 1;
 
             PosScrBarMaxPosY.Maximum = DrawBox.Height - 1;
-
-
         }
     }
 }

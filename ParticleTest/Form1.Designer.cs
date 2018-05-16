@@ -1,6 +1,6 @@
 ﻿namespace ParticleTest
 {
-    partial class Form1
+    partial class ParticleTestForm
     {
         /// <summary>
         /// Required designer variable.
@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private void InitializeComponents()
         {
             this.DrawBox = new System.Windows.Forms.PictureBox();
             this.TabControl = new System.Windows.Forms.TabControl();
@@ -835,7 +835,7 @@
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.DrawBox);
             this.MinimumSize = new System.Drawing.Size(632, 544);
-            this.Name = "Form1";
+            this.Name = "ParticleTestForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ParticleTest";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
